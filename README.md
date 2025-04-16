@@ -1,8 +1,6 @@
 wechat-miniprogram-plugin
 =========================
 
-[![Jetbrains Plugin Version](https://img.shields.io/jetbrains/plugin/v/13396-wechat-mini-program-support.svg "Jetbrains Plugin Version")](https://plugins.jetbrains.com/plugin/13396-wechat-mini-program-support/versions)
-[![Jetbrains Plugin Downloads](https://img.shields.io/jetbrains/plugin/d/13396-wechat-mini-program-support.svg "Jetbrains Plugin Downloads")](https://plugins.jetbrains.com/plugin/13396-wechat-mini-program-support)
 <!-- Plugin description -->
 ### 基于JetBrains平台的微信小程序插件
 
@@ -27,16 +25,11 @@ wechat-miniprogram-plugin
 - 支持QQ小程序
 - 支持NPM中的组件
 
-在[Wiki](https://gitee.com/zxy_c/wechat-miniprogram-plugin/wikis)中浏览更多功能
-
 <!-- Plugin description end -->
+
 安装
 ---
-可通过以下两种方式安装，在这之前请确保安装并启用了**JavaScript**和**CSS**插件
-- 通过IDE搜索并找到**Wechat mini program support**插件安装
-- 下载[发行版](https://gitee.com/zxy_c/wechat-miniprogram-plugin/releases)附件中的jar文件，在IDE中选择从磁盘安装
-
-插件版本和IDE版本的对应可以在[插件官网](https://plugins.jetbrains.com/plugin/13396-wechat-mini-program-support/versions)找到
+下载[发行版](https://gitee.com/zxy_c/wechat-miniprogram-plugin/releases)附件中的jar文件，在IDE中选择从磁盘安装
 
 使用
 ---
