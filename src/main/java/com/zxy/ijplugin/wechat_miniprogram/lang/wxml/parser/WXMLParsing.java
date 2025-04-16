@@ -13,6 +13,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import static com.intellij.psi.xml.XmlElementType.*;
+import static com.intellij.psi.xml.XmlTokenType.*;
 
 /*
  * copy from XmlParsing

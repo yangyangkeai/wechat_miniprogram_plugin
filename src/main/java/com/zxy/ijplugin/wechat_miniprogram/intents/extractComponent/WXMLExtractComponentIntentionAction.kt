@@ -81,6 +81,7 @@ import com.intellij.psi.PsiWhiteSpace
 import com.intellij.psi.util.PsiTreeUtil
 import com.intellij.psi.xml.XmlElementType
 import com.intellij.psi.xml.XmlTag
+import com.intellij.psi.xml.XmlTokenType
 import com.zxy.ijplugin.wechat_miniprogram.context.isWechatMiniProgramContext
 import com.zxy.ijplugin.wechat_miniprogram.lang.wxml.WXMLPsiFile
 
@@ -116,9 +117,9 @@ class WXMLExtractComponentIntentionAction : PsiElementBaseIntentionAction() {
             // 如果当前没有选择元素
             val type = element.node.elementType
             val parent = element.parent as? XmlTag
-            if (parent != null && (type == XmlElementType.XML_NAME ||
-                            type == XmlElementType.XML_START_TAG_START ||
-                            type == XmlElementType.XML_TAG_NAME)) {
+            if (parent != null && (type == XmlTokenType.XML_NAME ||
+                            type == XmlTokenType.XML_START_TAG_START ||
+                            type == XmlTokenType.XML_TAG_NAME)) {
                 return listOf(parent)
             }
             if (element is XmlTag) return listOf(element)

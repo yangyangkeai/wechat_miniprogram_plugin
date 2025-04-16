@@ -90,7 +90,7 @@ abstract class RelateFileHolder {
 
     companion object {
         val MARKUP = QQCompatibleRelateFileHolder(QMLFileType.INSTANCE, WXMLFileType.INSTANCE)
-        val SCRIPT = SingleFileTypeFileHolder(JavaScriptFileType.INSTANCE)
+        val SCRIPT = SingleFileTypeFileHolder(JavaScriptFileType)
         val STYLE = QQCompatibleRelateFileHolder(QSSFileType.INSTANCE, WXSSFileType.INSTANCE)
         val JSON = SingleFileTypeFileHolder(JsonFileType.INSTANCE)
 
