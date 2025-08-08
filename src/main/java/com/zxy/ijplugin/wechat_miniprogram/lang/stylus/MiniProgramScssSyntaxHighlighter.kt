@@ -81,9 +81,11 @@ import org.jetbrains.plugins.stylus.highlighting.StylusHighlighterLexer
 class MiniProgramStylusSyntaxHighlighter : StylusSyntaxHighlighter() {
 
     override fun getHighlightingLexer(): Lexer {
-        return StylusHighlighterLexer(CssElementDescriptorFactory2.getInstance().valueIdentifiers.apply {
-            this.add("rpx")
-        })
+        val units = setOf(
+            "em", "ex", "ch", "rem", "vw", "vh", "vmin", "vmax",
+            "px", "mm", "q", "cm", "in", "pt", "pc", "%", "rpx"  // 加了 rpx
+        )
+        return StylusHighlighterLexer(units)
     }
 
 }

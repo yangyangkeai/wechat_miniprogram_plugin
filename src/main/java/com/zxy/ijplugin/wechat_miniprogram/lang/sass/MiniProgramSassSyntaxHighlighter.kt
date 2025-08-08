@@ -74,16 +74,17 @@
 package com.zxy.ijplugin.wechat_miniprogram.lang.sass
 
 import com.intellij.lexer.Lexer
-import com.intellij.psi.css.impl.util.scheme.CssElementDescriptorFactory2
 import org.jetbrains.plugins.sass.highlighting.SASSSyntaxHighlighter
 import org.jetbrains.plugins.sass.lexer.SASSHighlighterLexer
 
 class MiniProgramSassSyntaxHighlighter : SASSSyntaxHighlighter() {
 
     override fun getHighlightingLexer(): Lexer {
-        return SASSHighlighterLexer(CssElementDescriptorFactory2.getInstance().valueIdentifiers.apply {
-            this.add("rpx")
-        })
+        val units = setOf(
+            "em", "ex", "ch", "rem", "vw", "vh", "vmin", "vmax",
+            "px", "mm", "q", "cm", "in", "pt", "pc", "%", "rpx"  // 加了 rpx
+        )
+        return SASSHighlighterLexer(units)
     }
 
 }

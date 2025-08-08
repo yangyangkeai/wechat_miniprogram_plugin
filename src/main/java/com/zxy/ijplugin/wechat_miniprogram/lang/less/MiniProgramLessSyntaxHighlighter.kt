@@ -74,14 +74,15 @@
 package com.zxy.ijplugin.wechat_miniprogram.lang.less
 
 import com.intellij.lexer.Lexer
-import com.intellij.psi.css.impl.util.scheme.CssElementDescriptorFactory2
 import org.jetbrains.plugins.less.highlighting.LESSSyntaxHighlighter
 import org.jetbrains.plugins.less.lexer.LESSHighlightingLexer
 
 class MiniProgramLessSyntaxHighlighter : LESSSyntaxHighlighter() {
     override fun getHighlightingLexer(): Lexer {
-        return LESSHighlightingLexer(CssElementDescriptorFactory2.getInstance().valueIdentifiers.apply {
-            this.add("rpx")
-        })
+        val units = setOf(
+            "em", "ex", "ch", "rem", "vw", "vh", "vmin", "vmax",
+            "px", "mm", "q", "cm", "in", "pt", "pc", "%", "rpx"  // 加了 rpx
+        )
+        return LESSHighlightingLexer(units)
     }
 }

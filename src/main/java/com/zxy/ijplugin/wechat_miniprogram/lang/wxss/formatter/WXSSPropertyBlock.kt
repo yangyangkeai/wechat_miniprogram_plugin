@@ -106,7 +106,7 @@ open class WXSSPropertyBlock(
                 } else if (formatterBlock.myType === CssElementTypes.CSS_COMMA) {
                     Spacing.createSpacing(1, 1, 0, true, 0)
                 } else if (formatterBlock2.myType === CssElementTypes.CSS_LPAREN && this.node
-                                .elementType === CssElementTypes.CSS_IMPORT) {
+                                .elementType === CssElementTypes.CSS_IMPORTANT) {
                     Spacing.createSpacing(0, 1, 0, false, 0)
                 } else {
                     val textOfFormatterBlock2 = StringUtil.toLowerCase(
