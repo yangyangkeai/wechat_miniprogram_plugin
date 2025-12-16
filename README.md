@@ -34,3 +34,8 @@ wechat-miniprogram-plugin
 使用
 ---
 通过IDE打开微信小程序项目即可使用全部功能
+
+感谢
+---
+本项目基于[https://gitee.com/zxy_c/wechat-miniprogram-plugin](https://gitee.com/zxy_c/wechat-miniprogram-plugin)进行升级和改进，感谢作者多年的无私奉献
+
