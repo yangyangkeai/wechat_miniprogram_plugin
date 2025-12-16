@@ -107,12 +107,12 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <!--suppress PluginXmlCapitalization -->
-        <notificationGroup displayType="BALLOON" id="com.zxy.ijplugin.wechat_miniprogram.plugin.UpdateInfoActivity" key="groupId" isLogByDefault="false" bundle="messages.notify"/>
+        <!--<notificationGroup displayType="BALLOON" id="com.zxy.ijplugin.wechat_miniprogram.plugin.UpdateInfoActivity" key="groupId" isLogByDefault="false" bundle="messages.notify"/>-->
 
         <editorNotificationProvider implementation="com.zxy.ijplugin.wechat_miniprogram.qq.SetQQMiniProgramTypeNotification"/>
         <projectConfigurable groupId="language" instance="com.zxy.ijplugin.wechat_miniprogram.settings.MyProjectConfigurable"/>
         <projectService serviceImplementation="com.zxy.ijplugin.wechat_miniprogram.settings.MyProjectSettings"/>
-        <postStartupActivity implementation="com.zxy.ijplugin.wechat_miniprogram.plugin.UpdateInfoActivity"/>
+        <!--<postStartupActivity implementation="com.zxy.ijplugin.wechat_miniprogram.plugin.UpdateInfoActivity"/>-->
         <gotoRelatedProvider implementation="com.zxy.ijplugin.wechat_miniprogram.navigation.WechatMiniProgramGotoRelatedProvider"/>
 
         <intentionAction>
