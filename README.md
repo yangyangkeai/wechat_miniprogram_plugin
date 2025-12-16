@@ -29,7 +29,7 @@ wechat-miniprogram-plugin
 
 安装
 ---
-下载[发行版](https://gitee.com/zxy_c/wechat-miniprogram-plugin/releases)附件中的jar文件，在IDE中选择从磁盘安装
+下载[发行版](https://github.com/yangyangkeai/wechat_miniprogram_plugin/releases)附件中的jar文件，在IDE中选择从磁盘安装
 
 使用
 ---
