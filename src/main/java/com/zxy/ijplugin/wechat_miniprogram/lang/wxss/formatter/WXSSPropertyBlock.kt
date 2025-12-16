@@ -81,17 +81,16 @@ import com.intellij.lang.ASTNode
 import com.intellij.openapi.util.text.StringUtil
 import com.intellij.psi.css.CssTermType
 import com.intellij.psi.css.impl.CssElementTypes
-import com.intellij.psi.css.impl.util.completion.TimeUserLookup
 import com.intellij.psi.css.impl.util.editor.CssFormattingModelBuilder
 import com.intellij.psi.xml.XmlTokenType
 import com.zxy.ijplugin.wechat_miniprogram.lang.wxss.psi.impl.WXSSTermImpl
 
 open class WXSSPropertyBlock(
-        _node: ASTNode?, indent: Indent?, extension: CssFormattingModelBuilder.CssFormattingExtension?,
-        alignment: Alignment?, childAlignment: Alignment?
+    _node: ASTNode?, indent: Indent?, extension: CssFormattingModelBuilder.CssFormattingExtension?,
+    alignment: Alignment?, childAlignment: Alignment?
 ) : CssFormattingModelBuilder.CssPropertyBlock(
-        _node, indent,
-        extension, alignment, childAlignment
+    _node, indent,
+    extension, alignment, childAlignment
 ) {
     override fun getSpacing(formatterBlock: Block?, formatterBlock2: Block): Spacing? {
         return if (formatterBlock is CssFormattingModelBuilder.CssFormatterBlock && formatterBlock2 is CssFormattingModelBuilder.CssFormatterBlock) {
@@ -106,22 +105,24 @@ open class WXSSPropertyBlock(
                 } else if (formatterBlock.myType === CssElementTypes.CSS_COMMA) {
                     Spacing.createSpacing(1, 1, 0, true, 0)
                 } else if (formatterBlock2.myType === CssElementTypes.CSS_LPAREN && this.node
-                                .elementType === CssElementTypes.CSS_IMPORTANT) {
+                        .elementType === CssElementTypes.CSS_IMPORTANT
+                ) {
                     Spacing.createSpacing(0, 1, 0, false, 0)
                 } else {
                     val textOfFormatterBlock2 = StringUtil.toLowerCase(
-                            formatterBlock2.node.text
+                        formatterBlock2.node.text
                     )
                     if (formatterBlock.myType !== CssElementTypes.CSS_MINUS && formatterBlock.myType !== CssElementTypes.CSS_ASTERISK && (formatterBlock.myType !== CssElementTypes.CSS_PLUS || formatterBlock2.myType !== CssElementTypes.CSS_NUMBER) && (formatterBlock.myType !== CssElementTypes.CSS_IDENT || formatterBlock2.myType !== CssElementTypes.CSS_PLUS) && (formatterBlock.myType !== CssElementTypes.CSS_PLUS || formatterBlock2.myType !== CssElementTypes.CSS_IDENT) && formatterBlock2.myType !== CssElementTypes.CSS_COLON && formatterBlock2.myType !== CssElementTypes.CSS_SEMICOLON && formatterBlock2.myType !== CssElementTypes.CSS_PERCENT && (formatterBlock.myType !== CssElementTypes.CSS_NUMBER && formatterBlock.myType !== XmlTokenType.XML_COMMENT_START || formatterBlock2.myType !== CssElementTypes.CSS_IDENT || WXSSTermImpl.getTypeBySuffix(
-                                    textOfFormatterBlock2
-                            ) === CssTermType.UNKNOWN && "n" != textOfFormatterBlock2 && "x" != textOfFormatterBlock2 && !TimeUserLookup.isTimeSuffix(
-                                    textOfFormatterBlock2
-                            ))) {
+                            textOfFormatterBlock2
+                        ) === CssTermType.UNKNOWN && "n" != textOfFormatterBlock2 && "x" != textOfFormatterBlock2 && !isTimeSuffixLocal(
+                            textOfFormatterBlock2
+                        ))
+                    ) {
                         if (formatterBlock2.myType === CssElementTypes.CSS_LPAREN) {
                             Spacing.createSpacing(0, 1, 0, false, 0)
                         } else if (formatterBlock.myType === CssElementTypes.CSS_COLON) {
                             if (codeStyleSettings.SPACE_AFTER_COLON) Spacing.createSpacing(
-                                    1, 1, 0, false, 0
+                                1, 1, 0, false, 0
                             ) else Spacing.createSpacing(0, 0, 0, false, 0)
                         } else {
                             Spacing.createSpacing(1, 1, 0, false, 0)
@@ -136,5 +137,10 @@ open class WXSSPropertyBlock(
         } else {
             null
         }
+    }
+
+    private fun isTimeSuffixLocal(text: String): Boolean {
+        val s = text.trim()
+        return s == "s" || s == "ms"
     }
 }
