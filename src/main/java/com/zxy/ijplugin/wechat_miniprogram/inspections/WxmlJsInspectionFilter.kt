@@ -77,7 +77,7 @@ import com.intellij.codeInspection.InspectionProfileEntry
 import com.intellij.codeInspection.InspectionSuppressor
 import com.intellij.codeInspection.SuppressQuickFix
 import com.intellij.lang.javascript.highlighting.IntentionAndInspectionFilter
-import com.intellij.lang.javascript.inspections.JSUnresolvedVariableInspection
+import com.intellij.lang.javascript.inspections.JSUnresolvedReferenceInspection;
 import com.intellij.lang.javascript.intentions.JSSplitDeclarationIntention
 import com.intellij.lang.javascript.psi.JSEmbeddedContent
 import com.intellij.psi.PsiElement
@@ -95,7 +95,7 @@ class WxmlJsInspectionFilter : IntentionAndInspectionFilter(), InspectionSuppres
 
     companion object {
         val suppressedToolIds = listOf(
-                JSUnresolvedVariableInspection::class,
+            JSUnresolvedReferenceInspection::class,
                 BadExpressionStatementJSInspection::class,
                 JSSplitDeclarationIntention::class,
                 CommaExpressionJSInspection::class,
