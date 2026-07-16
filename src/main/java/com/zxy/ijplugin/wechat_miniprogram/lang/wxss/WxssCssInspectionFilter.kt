@@ -85,7 +85,8 @@ class WxssCssInspectionFilter : InspectionSuppressor {
     }
 
     override fun isSuppressedFor(element: PsiElement, toolId: String): Boolean {
-        return (toolId == "CssInvalidPropertyValue" || toolId == "CssInvalidFunction") && element.text.contains("rpx") && isWechatMiniProgramContext(
+        return (toolId == "CssInvalidPropertyValue" || toolId == "CssInvalidFunction" || toolId == "CssUnknownUnit") &&
+                element.text.contains("rpx", ignoreCase = true) && isWechatMiniProgramContext(
             element
         )
     }

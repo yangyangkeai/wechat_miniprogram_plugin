@@ -74,18 +74,13 @@
 package com.zxy.ijplugin.wechat_miniprogram.lang.stylus
 
 import com.intellij.lexer.Lexer
-import com.intellij.psi.css.impl.util.scheme.CssElementDescriptorFactory2
 import org.jetbrains.plugins.stylus.StylusSyntaxHighlighter
 import org.jetbrains.plugins.stylus.highlighting.StylusHighlighterLexer
 
 class MiniProgramStylusSyntaxHighlighter : StylusSyntaxHighlighter() {
 
     override fun getHighlightingLexer(): Lexer {
-        val units = setOf(
-            "em", "ex", "ch", "rem", "vw", "vh", "vmin", "vmax",
-            "px", "mm", "q", "cm", "in", "pt", "pc", "%", "rpx"  // 加了 rpx
-        )
-        return StylusHighlighterLexer(units)
+        return StylusHighlighterLexer()
     }
 
 }

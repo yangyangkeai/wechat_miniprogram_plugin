@@ -83,6 +83,7 @@ import com.intellij.psi.css.CssTermType
 import com.intellij.psi.css.impl.CssElementTypes
 import com.intellij.psi.css.impl.CssTermImpl
 import com.intellij.psi.css.impl.CssTermTypes
+import com.intellij.psi.css.util.CssTermTypeUtil
 import com.intellij.psi.util.PsiTreeUtil
 import com.intellij.xml.util.ColorMap
 
@@ -230,13 +231,14 @@ class WXSSTermImpl : CssTermImpl() {
 
     companion object {
         /**
-         * @see CssTermImpl.getTypeBySuffix
+         * @see CssTermTypeUtil.getTypeBySuffix
          */
         fun getTypeBySuffix(text: String): CssTermType {
-            if (text == "rpx") {
+            val normalized = StringUtil.toLowerCase(text)
+            if (normalized == "rpx") {
                 return CssTermTypes.LENGTH
             }
-            return CssTermImpl.getTypeBySuffix(text)
+            return CssTermTypeUtil.getTypeBySuffix(normalized)
         }
     }
 

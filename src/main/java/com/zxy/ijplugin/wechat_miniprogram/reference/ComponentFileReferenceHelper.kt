@@ -88,9 +88,9 @@ class ComponentFileReferenceHelper : PsiFileReferenceHelper() {
         return isWechatMiniProgramContext(project) && findProjectConfigJsonVirtualFile(project) != file
     }
 
-    override fun getRoots(module: Module): MutableCollection<PsiFileSystemItem> {
+    override fun getRoots(module: Module, hostFile: VirtualFile): MutableCollection<PsiFileSystemItem> {
         return findMiniProgramRootDir(module.project)?.let {
             mutableListOf(it as PsiFileSystemItem)
-        } ?: super.getRoots(module)
+        } ?: super.getRoots(module, hostFile)
     }
 }

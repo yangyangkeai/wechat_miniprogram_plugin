@@ -79,10 +79,6 @@ import org.jetbrains.plugins.less.lexer.LESSHighlightingLexer
 
 class MiniProgramLessSyntaxHighlighter : LESSSyntaxHighlighter() {
     override fun getHighlightingLexer(): Lexer {
-        val units = setOf(
-            "em", "ex", "ch", "rem", "vw", "vh", "vmin", "vmax",
-            "px", "mm", "q", "cm", "in", "pt", "pc", "%", "rpx"  // 加了 rpx
-        )
-        return LESSHighlightingLexer(units)
+        return LESSHighlightingLexer()
     }
 }

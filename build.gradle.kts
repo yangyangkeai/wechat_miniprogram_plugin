@@ -2,6 +2,7 @@ import org.jetbrains.changelog.Changelog
 import org.jetbrains.changelog.markdownToHTML
 import org.jetbrains.intellij.platform.gradle.TestFrameworkType
 import org.jetbrains.intellij.platform.gradle.models.ProductModules
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
     id("java") // Java support
@@ -17,7 +18,10 @@ version = providers.gradleProperty("pluginVersion").get()
 
 // Set the JVM language level used to build the project.
 kotlin {
-    jvmToolchain(21)
+    jvmToolchain(25)
+    compilerOptions {
+        jvmTarget = JvmTarget.JVM_25
+    }
 }
 
 // Configure project's dependencies

@@ -80,11 +80,7 @@ import org.jetbrains.plugins.scss.lexer.SCSSHighlightingLexer
 class MiniProgramScssSyntaxHighlighter : SCSSSyntaxHighlighter() {
 
     override fun getHighlightingLexer(): Lexer {
-        val units = setOf(
-            "em", "ex", "ch", "rem", "vw", "vh", "vmin", "vmax",
-            "px", "mm", "q", "cm", "in", "pt", "pc", "%", "rpx"  // 加了 rpx
-        )
-        return SCSSHighlightingLexer(units)
+        return SCSSHighlightingLexer()
     }
 
 }
