@@ -39,3 +39,10 @@ wechat-miniprogram-plugin
 ---
 本项目基于[https://gitee.com/zxy_c/wechat-miniprogram-plugin](https://gitee.com/zxy_c/wechat-miniprogram-plugin)进行升级和改进，感谢作者多年的无私奉献
 
+开源协议
+---
+本项目采用混合授权模式：
+- 衍生自原项目的代码受 **Mulan PSL v1** 协议约束。
+- 作者 @yangyangkeai 新增及独立修改的部分受 **GPLv3** 协议约束。
+- 详情请参阅根目录下的 [LICENSE](LICENSE) 文件。
+
