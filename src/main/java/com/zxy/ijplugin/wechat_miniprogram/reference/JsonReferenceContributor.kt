@@ -80,6 +80,7 @@ import com.intellij.psi.impl.source.xml.TagNameReference
 import com.intellij.psi.xml.XmlTag
 import com.intellij.util.ProcessingContext
 import com.zxy.ijplugin.wechat_miniprogram.context.RelateFileHolder
+import com.zxy.ijplugin.wechat_miniprogram.context.findMiniProgramRootDir
 import com.zxy.ijplugin.wechat_miniprogram.utils.findChildrenOfType
 
 class JsonReferenceContributor : PsiReferenceContributor() {
@@ -136,26 +137,108 @@ class JsonReferenceContributor : PsiReferenceContributor() {
                             psiElement: PsiElement, processingContext: ProcessingContext
                     ): Array<out PsiReference> {
                         psiElement as JsonStringLiteral
-                        val parentArray = psiElement.parent
                         if (RelateFileHolder.JSON.findAppFile(
                                         psiElement.project
-                                ) == psiElement.containingFile.originalFile) {
-                            // 确定是app.json
-                            if (parentArray is JsonArray) {
-                                val parentProperty = parentArray.parent
-                                if (parentProperty is JsonProperty && parentProperty.name == "pages") {
-                                    val rootObject = parentProperty.parent
-                                    if (rootObject is JsonObject && rootObject.parent is JsonFile) {
-                                        // 确定是app.json下的pages配置项
-                                        return ComponentFileReferenceSet(psiElement).allReferences
-                                    }
-                                }
-                            }
+                                ) != psiElement.containingFile.originalFile) {
+                            return PsiReference.EMPTY_ARRAY
                         }
-                        return PsiReference.EMPTY_ARRAY
+                        return getAppJsonPagePathReferenceSet(psiElement)?.allReferences ?: PsiReference.EMPTY_ARRAY
                     }
 
                 })
+    }
+}
+
+private fun getAppJsonPagePathReferenceSet(psiElement: JsonStringLiteral): ComponentFileReferenceSet? {
+    return when {
+        psiElement.isRootPagesPath()
+                || psiElement.isEntryPagePath()
+                || psiElement.isTabBarPagePath() -> ComponentFileReferenceSet(psiElement)
+
+        else -> psiElement.findSubPackagePageReferenceSet()
+    }
+}
+
+private fun JsonStringLiteral.isRootPagesPath(): Boolean {
+    val parentArray = this.parent as? JsonArray ?: return false
+    val parentProperty = parentArray.parent as? JsonProperty ?: return false
+    return parentProperty.name == "pages" && parentProperty.parent.isAppJsonRootObject()
+}
+
+private fun JsonStringLiteral.isEntryPagePath(): Boolean {
+    val parentProperty = this.parent as? JsonProperty ?: return false
+    return parentProperty.value == this
+            && parentProperty.name == "entryPagePath"
+            && parentProperty.parent.isAppJsonRootObject()
+}
+
+private fun JsonStringLiteral.isTabBarPagePath(): Boolean {
+    val pagePathProperty = this.parent as? JsonProperty ?: return false
+    if (pagePathProperty.value != this || pagePathProperty.name != "pagePath") {
+        return false
+    }
+    val listItemObject = pagePathProperty.parent as? JsonObject ?: return false
+    val listArray = listItemObject.parent as? JsonArray ?: return false
+    val listProperty = listArray.parent as? JsonProperty ?: return false
+    if (listProperty.name != "list") {
+        return false
+    }
+    val tabBarObject = listProperty.parent as? JsonObject ?: return false
+    val tabBarProperty = tabBarObject.parent as? JsonProperty ?: return false
+    return tabBarProperty.name == "tabBar" && tabBarProperty.parent.isAppJsonRootObject()
+}
+
+private fun JsonStringLiteral.findSubPackagePageReferenceSet(): ComponentFileReferenceSet? {
+    val parentArray = this.parent as? JsonArray ?: return null
+    val pagesProperty = parentArray.parent as? JsonProperty ?: return null
+    if (pagesProperty.name != "pages") {
+        return null
+    }
+    val subPackageObject = pagesProperty.parent as? JsonObject ?: return null
+    val subPackagesArray = subPackageObject.parent as? JsonArray ?: return null
+    val subPackagesProperty = subPackagesArray.parent as? JsonProperty ?: return null
+    if (subPackagesProperty.name != "subPackages" && subPackagesProperty.name != "subpackages") {
+        return null
+    }
+    if (!subPackagesProperty.parent.isAppJsonRootObject()) {
+        return null
+    }
+    val subPackageRoot = (subPackageObject.findProperty("root")?.value as? JsonStringLiteral)?.value ?: ""
+    val rootDirectory = findMiniProgramRootDir(this.project)?.findRelativeDirectory(subPackageRoot) ?: return null
+    return SubPackagePageReferenceSet(this, rootDirectory, subPackageRoot)
+}
+
+private fun PsiElement?.isAppJsonRootObject(): Boolean {
+    return this is JsonObject && this.parent is JsonFile
+}
+
+private fun PsiDirectory.findRelativeDirectory(relativePath: String): PsiDirectory? {
+    if (relativePath.isBlank()) {
+        return this
+    }
+    return relativePath.split("/").filter { it.isNotBlank() }.fold(this as PsiDirectory?) { directory, segment ->
+        directory?.findSubdirectory(segment)
+    }
+}
+
+private class SubPackagePageReferenceSet(
+        psiElement: JsonStringLiteral,
+        private val rootDirectory: PsiDirectory,
+        private val subPackageRoot: String
+) : ComponentFileReferenceSet(psiElement) {
+    override fun computeDefaultContexts(): MutableCollection<PsiFileSystemItem> {
+        return mutableListOf(rootDirectory)
+    }
+
+    override fun createPathFromFile(targetFile: PsiFile): String? {
+        val rootPath = subPackageRoot.trim('/')
+        return super.createPathFromFile(targetFile)?.removePrefix("/")?.let { fullPath ->
+            if (rootPath.isBlank()) {
+                fullPath
+            } else {
+                fullPath.removePrefix(rootPath).removePrefix("/")
+            }
+        }
     }
 }
 
@@ -175,4 +258,3 @@ class JsonRegistrationReference(jsonProperty: JsonProperty) :
     }
 
 }
-

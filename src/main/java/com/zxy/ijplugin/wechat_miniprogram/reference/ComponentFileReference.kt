@@ -85,16 +85,20 @@ import com.zxy.ijplugin.wechat_miniprogram.lang.wxml.WXMLPsiFile
 import com.zxy.ijplugin.wechat_miniprogram.lang.wxss.WXSSPsiFile
 import com.zxy.ijplugin.wechat_miniprogram.utils.ComponentFilesCreator
 
-class ComponentFileReferenceSet(psiElement: PsiElement) : FileReferenceSet(psiElement) {
+open class ComponentFileReferenceSet(psiElement: PsiElement) : FileReferenceSet(psiElement) {
 
     override fun createFileReference(range: TextRange, index: Int, text: String): FileReference {
         return ComponentFileReference(this, range, index, text)
     }
 
+    open fun createPathFromFile(targetFile: PsiFile): String? {
+        return ComponentFilesCreator.createComponentPathFromFile(targetFile)
+    }
+
 }
 
 class ComponentFileReference(
-        componentFileReferenceSet: ComponentFileReferenceSet,
+        private val componentFileReferenceSet: ComponentFileReferenceSet,
         range: TextRange,
         index: Int,
         text: String
@@ -167,9 +171,7 @@ class ComponentFileReference(
     }
 
     override fun bindToElement(element: PsiElement): PsiElement {
-        ComponentFilesCreator.createComponentPathFromFile(
-                element.containingFile
-        )?.let {
+        componentFileReferenceSet.createPathFromFile(element.containingFile)?.let {
             return this.element.replace(
                     JsonElementGenerator(element.project).createStringLiteral(
                             it
@@ -180,4 +182,3 @@ class ComponentFileReference(
     }
 
 }
-

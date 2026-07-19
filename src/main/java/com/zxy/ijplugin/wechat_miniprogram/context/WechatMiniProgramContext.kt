@@ -80,6 +80,7 @@ import com.intellij.json.psi.JsonObject
 import com.intellij.json.psi.JsonStringLiteral
 import com.intellij.openapi.application.runReadAction
 import com.intellij.openapi.project.Project
+import com.intellij.openapi.roots.ProjectRootManager
 import com.intellij.openapi.vfs.LocalFileSystem
 import com.intellij.openapi.vfs.VfsUtil
 import com.intellij.openapi.vfs.VirtualFile
@@ -166,11 +167,8 @@ fun findMiniProgramRootDir(project: Project): PsiDirectory? {
 }
 
 fun findProjectRootDir(project: Project): PsiDirectory? {
-    return project.basePath?.let {
-        LocalFileSystem.getInstance().findFileByPath(it)
-    }?.let {
+    return ProjectRootManager.getInstance(project).contentRoots.firstOrNull()?.let {
         runReadAction {
-            // 读取文件内容创建文件
             PsiManager.getInstance(project).findDirectory(it)
         }
     }
