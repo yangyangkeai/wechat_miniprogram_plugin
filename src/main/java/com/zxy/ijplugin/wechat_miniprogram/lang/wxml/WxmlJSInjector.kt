@@ -158,10 +158,12 @@ private fun searchDoubleBraceAndInject(
         if (range != null) {
             val interpolatedText = psiElement.text.substring(range.first, range.last + 1)
             val wrapAsObjectLiteral = interpolatedText.trimStart().startsWith("...")
+            val prefix = if (wrapAsObjectLiteral) "({" else "("
+            val suffix = if (wrapAsObjectLiteral) "})" else ")"
             multiHostRegistrar.startInjecting(WxmlJsLanguage.INSTANCE)
                     .addPlace(
-                            if (wrapAsObjectLiteral) "({" else null,
-                            if (wrapAsObjectLiteral) "})" else null,
+                            prefix,
+                            suffix,
                             psiElement,
                             range.toTextRange()
                     )

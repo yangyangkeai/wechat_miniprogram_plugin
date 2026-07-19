@@ -75,10 +75,15 @@ package com.zxy.ijplugin.wechat_miniprogram.lang.wxml.psi.impl
 
 import com.intellij.icons.AllIcons
 import com.intellij.navigation.ItemPresentation
+import com.intellij.psi.LiteralTextEscaper
 import com.intellij.psi.impl.source.xml.XmlAttributeValueImpl
 import javax.swing.Icon
 
 class WXMLAttributeValueImpl : XmlAttributeValueImpl() {
+
+    override fun createLiteralTextEscaper(): LiteralTextEscaper<XmlAttributeValueImpl> {
+        return WxmlRawTextEscaper(this)
+    }
 
     override fun getPresentation(): ItemPresentation? {
         val presentation = super.getPresentation()
