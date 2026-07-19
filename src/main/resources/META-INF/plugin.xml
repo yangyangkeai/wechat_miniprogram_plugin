@@ -117,26 +117,6 @@
         <gotoRelatedProvider implementation="com.zxy.ijplugin.wechat_miniprogram.navigation.WechatMiniProgramGotoRelatedProvider"/>
 
         <intentionAction>
-            <descriptionDirectoryName>WXMLCreateClassAtAppWxssFileIntentionAction</descriptionDirectoryName>
-            <className>com.zxy.ijplugin.wechat_miniprogram.intents.WXMLCreateClassAtAppWxssFileIntentionAction</className>
-            <category>Wechat mini program</category>
-        </intentionAction>
-        <intentionAction>
-            <descriptionDirectoryName>WXMLCreateClassAtComponentWxssFileIntentionAction</descriptionDirectoryName>
-            <className>com.zxy.ijplugin.wechat_miniprogram.intents.WXMLCreateClassAtComponentWxssFileIntentionAction</className>
-            <category>Wechat mini program</category>
-        </intentionAction>
-        <intentionAction>
-            <descriptionDirectoryName>WXMLCreateIdAtWxssFileIntentionAction</descriptionDirectoryName>
-            <className>com.zxy.ijplugin.wechat_miniprogram.intents.WXMLCreateIdAtWxssFileIntentionAction</className>
-            <category>Wechat mini program</category>
-        </intentionAction>
-        <intentionAction>
-            <descriptionDirectoryName>WXMLCreateEventHandlerIntentionAction</descriptionDirectoryName>
-            <className>com.zxy.ijplugin.wechat_miniprogram.intents.WXMLCreateEventHandlerIntentionAction</className>
-            <category>Wechat mini program</category>
-        </intentionAction>
-        <intentionAction>
             <descriptionDirectoryName>WXMLExtractComponentIntentionAction</descriptionDirectoryName>
             <className>com.zxy.ijplugin.wechat_miniprogram.intents.extractComponent.WXMLExtractComponentIntentionAction</className>
             <category>Wechat mini program</category>

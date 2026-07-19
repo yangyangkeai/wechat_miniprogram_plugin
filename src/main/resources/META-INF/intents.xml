@@ -71,7 +71,7 @@
   ~    See the Mulan PSL v1 for more details.
   -->
 
-<idea-plugins>
+<idea-plugin>
     <extensions defaultExtensionNs="com.intellij">
         <intentionAction>
             <descriptionDirectoryName>WXMLCreateClassAtAppWxssFileIntentionAction</descriptionDirectoryName>
@@ -94,4 +94,4 @@
             <category>Wechat mini program</category>
         </intentionAction>
     </extensions>
-</idea-plugins>
+</idea-plugin>
