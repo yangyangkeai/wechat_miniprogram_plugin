@@ -1,0 +1,77 @@
+{
+  "draggable-sheet": {
+    "description": "半屏可拖拽组件。该组件需配合 DraggableSheetContext 接口使用。 目前仅在 Skyline 渲染引擎下支持。",
+    "attributeDescriptors": [
+      {
+        "key": "initial-child-size",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 0.5,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "初始时占父容器的比例"
+      },
+      {
+        "key": "min-child-size",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 0.25,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "最小时占父容器的比例"
+      },
+      {
+        "key": "max-child-size",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 1.0,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "最大时占父容器的比例"
+      },
+      {
+        "key": "snap",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "拖拽后是否自动对齐关键点"
+      },
+      {
+        "key": "snap-sizes",
+        "types": [
+          "ARRAY"
+        ],
+        "default": [],
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "拖拽后对齐的关键点，无需包含最小和最大值"
+      },
+      {
+        "key": "worklet:onsizeupdate",
+        "types": [
+          "WORKLET"
+        ],
+        "default": "",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "尺寸发生变化时触发，仅支持 worklet 作为回调。event = {pixels, size}"
+      }
+    ],
+    "events": [],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/draggable-sheet.html"
+  }
+}

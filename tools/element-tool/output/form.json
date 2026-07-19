@@ -1,0 +1,37 @@
+{
+  "form": {
+    "description": "表单。将组件内的用户输入的 switch input checkbox slider radio picker 提交。当点击 form 表单中 form-type 为 submit 的 button 组件时，会将表单组件中的 value 值进行提交，需要在表单组件中加上 name 来作为 key。",
+    "attributeDescriptors": [
+      {
+        "key": "report-submit",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否返回 formId 用于发送模板消息"
+      },
+      {
+        "key": "report-submit-timeout",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 0,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "等待一段时间（毫秒数）以确认 formId 是否生效。如果未指定这个参数，formId 有很小的概率是无效的（如遇到网络失败的情况）。指定这个参数将可以检测 formId 是否有效，以这个参数的时间作为这项检测的超时时间。如果失败，将返回 requestFormId:fail 开头的 formId"
+      }
+    ],
+    "events": [
+      "submit",
+      "reset",
+      "submitToGroup"
+    ],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/form.html"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "radio": {
+    "description": "单选项目。",
+    "attributeDescriptors": [
+      {
+        "key": "value",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "radio 标识。当该radio 选中时，radio-group 的 change 事件会携带radio的value"
+      },
+      {
+        "key": "checked",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "当前是否选中"
+      },
+      {
+        "key": "disabled",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否禁用"
+      },
+      {
+        "key": "color",
+        "types": [
+          "STRING"
+        ],
+        "default": "#09BB07",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "radio的颜色，同css的color"
+      }
+    ],
+    "events": [],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/radio.html"
+  }
+}

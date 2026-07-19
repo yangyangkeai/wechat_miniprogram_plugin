@@ -1,0 +1,81 @@
+{
+  "picker-view": {
+    "description": "嵌入页面的滚动选择器。其中只可放置 picker-view-column 组件，其它节点不会显示。",
+    "attributeDescriptors": [
+      {
+        "key": "value",
+        "types": [
+          "ARRAY"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "数组中的数字依次表示 picker-view 内的 picker-view-column 选择的第几项（下标从 0 开始），数字大于 picker-view-column 可选项长度时，选择最后一项。"
+      },
+      {
+        "key": "mask-class",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "设置蒙层的类名"
+      },
+      {
+        "key": "indicator-style",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "设置选择器中间选中框的样式"
+      },
+      {
+        "key": "indicator-class",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "设置选择器中间选中框的类名"
+      },
+      {
+        "key": "mask-style",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "设置蒙层的样式"
+      },
+      {
+        "key": "immediate-change",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否在手指松开时立即触发 change 事件。若不开启则会在滚动动画结束后触发 change 事件。"
+      }
+    ],
+    "events": [
+      "change",
+      "pickstart",
+      "pickend"
+    ],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/picker-view.html"
+  }
+}

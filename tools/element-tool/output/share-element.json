@@ -1,0 +1,127 @@
+{
+  "share-element": {
+    "description": "共享元素。共享元素是一种动画形式，类似于 flutter Hero动画，表现为元素像是在页面间穿越一样。该组件需与 page-container 组件结合使用。使用时需在当前页放置 share-element 组件，同时在 page-container 容器中放置对应的 share-element 组件，对应关系通过属性值 key 映射。当设置 page-container 显示时，transform 属性为 true 的共享元素会产生动画。当前页面容器退出时，会产生返回动画。",
+    "attributeDescriptors": [
+      {
+        "key": "key",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": true,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "映射标记，页面内唯一"
+      },
+      {
+        "key": "transform",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否进行动画"
+      },
+      {
+        "key": "duration",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 300,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "动画时长，单位毫秒"
+      },
+      {
+        "key": "easing-function",
+        "types": [
+          "STRING"
+        ],
+        "default": "ease-out",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "css缓动函数"
+      },
+      {
+        "key": "transition-on-gesture",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "手势返回时是否进行动画"
+      },
+      {
+        "key": "shuttle-on-push",
+        "types": [
+          "STRING"
+        ],
+        "default": "to",
+        "required": false,
+        "enums": [
+          "from",
+          "to"
+        ],
+        "requiredInEnums": true,
+        "description": "指定 push 阶段的飞跃物"
+      },
+      {
+        "key": "shuttle-on-pop",
+        "types": [
+          "STRING"
+        ],
+        "default": "to",
+        "required": false,
+        "enums": [
+          "from",
+          "to"
+        ],
+        "requiredInEnums": true,
+        "description": "指定 pop 阶段的飞跃物"
+      },
+      {
+        "key": "worklet:onframe",
+        "types": [
+          "CALLBACK"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "动画帧回调"
+      },
+      {
+        "key": "rect-tween-type",
+        "types": [
+          "STRING"
+        ],
+        "default": "materialRectArc",
+        "required": false,
+        "enums": [
+          "materialRectArc",
+          "materialRectCenterArc",
+          "linear",
+          "elasticIn",
+          "elasticOut",
+          "elasticInOut",
+          "bounceIn",
+          "bounceOut",
+          "bounceInOut",
+          "cubic-bezier(x1, y1, x2, y2)"
+        ],
+        "requiredInEnums": true,
+        "description": "动画插值曲线"
+      }
+    ],
+    "events": [],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/share-element.html"
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "slider": {
+    "description": "滑动选择器。",
+    "attributeDescriptors": [
+      {
+        "key": "min",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 0,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "最小值"
+      },
+      {
+        "key": "max",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 100,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "最大值"
+      },
+      {
+        "key": "step",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 1,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "步长，取值必须大于 0，并且可被(max - min)整除"
+      },
+      {
+        "key": "disabled",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否禁用"
+      },
+      {
+        "key": "value",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 0,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "当前取值"
+      },
+      {
+        "key": "color",
+        "types": [
+          "COLOR"
+        ],
+        "default": "#e9e9e9",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "背景条的颜色（请使用 backgroundColor）"
+      },
+      {
+        "key": "selected-color",
+        "types": [
+          "COLOR"
+        ],
+        "default": "#1aad19",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "已选择的颜色（请使用 activeColor）"
+      },
+      {
+        "key": "activeColor",
+        "types": [
+          "COLOR"
+        ],
+        "default": "#1aad19",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "已选择的颜色"
+      },
+      {
+        "key": "backgroundColor",
+        "types": [
+          "COLOR"
+        ],
+        "default": "#e9e9e9",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "背景条的颜色"
+      },
+      {
+        "key": "block-size",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 28,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "滑块的大小，取值范围为 12 - 28"
+      },
+      {
+        "key": "block-color",
+        "types": [
+          "COLOR"
+        ],
+        "default": "#ffffff",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "滑块的颜色"
+      },
+      {
+        "key": "show-value",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否显示当前 value"
+      }
+    ],
+    "events": [
+      "change",
+      "changing"
+    ],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/slider.html"
+  }
+}

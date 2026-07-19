@@ -1,0 +1,54 @@
+{
+  "canvas": {
+    "description": "画布。2.9.0 起支持一套新 Canvas 2D 接口（需指定 type 属性），同时支持同层渲染，原有接口不再维护。旧版本可参考 旧版画布迁移指南 进行迁移。",
+    "attributeDescriptors": [
+      {
+        "key": "type",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": false,
+        "enums": [
+          "2d",
+          "webgl"
+        ],
+        "requiredInEnums": true,
+        "description": "指定 canvas 类型，支持 2d (2.9.0) 和 webgl (2.7.0)"
+      },
+      {
+        "key": "canvas-id",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "canvas 组件的唯一标识符，若指定了 type 则无需再指定该属性"
+      },
+      {
+        "key": "disable-scroll",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "当在 canvas 中移动时且有绑定手势事件时，禁止屏幕滚动以及下拉刷新"
+      }
+    ],
+    "events": [
+      "touchstart",
+      "touchmove",
+      "touchend",
+      "touchcancel",
+      "longtap",
+      "error"
+    ],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/canvas.html"
+  }
+}

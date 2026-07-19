@@ -1,0 +1,23 @@
+{
+  "cover-view": {
+    "description": "覆盖在原生组件之上的文本视图。目前原生组件均已支持同层渲染，建议使用 view 替代。",
+    "attributeDescriptors": [
+      {
+        "key": "scroll-top",
+        "types": [
+          "NUMBER",
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "设置顶部滚动偏移量，仅在设置了 overflow-y: scroll 成为滚动元素后生效"
+      }
+    ],
+    "events": [],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/cover-view.html"
+  }
+}

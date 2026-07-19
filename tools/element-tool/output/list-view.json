@@ -1,0 +1,27 @@
+{
+  "list-view": {
+    "description": "列表布局容器，仅支持作为 <scroll-view type=\"custom\"> 模式的直接子节点或 sticky-section 组件直接子节点",
+    "attributeDescriptors": [
+      {
+        "key": "padding",
+        "types": [
+          "ARRAY"
+        ],
+        "default": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "长度为 4 的数组，按 top、right、bottom、left 顺序指定内边距。最低版本 3.0.0"
+      }
+    ],
+    "events": [],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/list-view.html"
+  }
+}

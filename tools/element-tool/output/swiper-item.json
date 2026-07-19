@@ -1,0 +1,33 @@
+{
+  "swiper-item": {
+    "description": "仅可放置在swiper组件中，宽高自动设置为100%。",
+    "attributeDescriptors": [
+      {
+        "key": "item-id",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "该 swiper-item 的标识符"
+      },
+      {
+        "key": "skip-hidden-item-layout",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否跳过未显示的滑块布局，设为 true 可优化复杂情况下的滑动性能，但会丢失隐藏状态滑块的布局信息"
+      }
+    ],
+    "events": [],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/swiper-item.html"
+  }
+}

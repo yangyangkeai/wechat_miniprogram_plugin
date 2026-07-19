@@ -1,0 +1,67 @@
+{
+  "voip-room": {
+    "description": "多人音视频对话。需用户授权 scope.camera、scope.record。",
+    "attributeDescriptors": [
+      {
+        "key": "openid",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": true,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "进入房间用户的 openid"
+      },
+      {
+        "key": "mode",
+        "types": [
+          "STRING"
+        ],
+        "default": "camera",
+        "required": true,
+        "enums": [
+          "camera",
+          "video"
+        ],
+        "requiredInEnums": true,
+        "description": "对话窗口类型"
+      },
+      {
+        "key": "device-position",
+        "types": [
+          "STRING"
+        ],
+        "default": "front",
+        "required": true,
+        "enums": [
+          "front",
+          "back"
+        ],
+        "requiredInEnums": true,
+        "description": "摄像头方向，仅在 mode 为 camera 时有效"
+      },
+      {
+        "key": "object-fit",
+        "types": [
+          "STRING"
+        ],
+        "default": "fill",
+        "required": true,
+        "enums": [
+          "fill",
+          "contain",
+          "cover"
+        ],
+        "requiredInEnums": true,
+        "description": "画面与容器比例不一致时，画面的表现形式"
+      }
+    ],
+    "events": [
+      "error"
+    ],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/voip-room.html"
+  }
+}

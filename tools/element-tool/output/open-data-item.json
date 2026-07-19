@@ -1,0 +1,36 @@
+{
+  "open-data-item": {
+    "description": "展示微信开放数据，需配合 open-data-list 组件使用。",
+    "attributeDescriptors": [
+      {
+        "key": "type",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": true,
+        "enums": [
+          "userNickName",
+          "userAvatar"
+        ],
+        "requiredInEnums": true,
+        "description": "开放数据类型"
+      },
+      {
+        "key": "index",
+        "types": [
+          "NUMBER"
+        ],
+        "default": null,
+        "required": true,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "序号"
+      }
+    ],
+    "events": [],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/open-data-item.html"
+  }
+}

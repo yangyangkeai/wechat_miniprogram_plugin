@@ -1,0 +1,113 @@
+{
+  "editor": {
+    "description": "富文本编辑器，可以对图片、文字进行编辑。编辑器导出内容支持带标签的 html 和纯文本的 text，编辑器内部采用 delta 格式进行存储。通过 setContents 接口设置内容时，解析插入的 html 可能会由于一些非法标签导致解析错误，建议开发者在小程序内使用时通过 delta 进行插入。",
+    "attributeDescriptors": [
+      {
+        "key": "read-only",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "设置编辑器为只读"
+      },
+      {
+        "key": "placeholder",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "提示信息"
+      },
+      {
+        "key": "show-img-size",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "点击图片时显示图片大小控件"
+      },
+      {
+        "key": "show-img-toolbar",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "点击图片时显示工具栏控件"
+      },
+      {
+        "key": "show-img-resize",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "点击图片时显示修改尺寸控件"
+      },
+      {
+        "key": "enable-formats",
+        "types": [
+          "ARRAY"
+        ],
+        "default": [],
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "编辑器允许的名单内的格式"
+      },
+      {
+        "key": "enterkeyhint",
+        "types": [
+          "STRING"
+        ],
+        "default": "enter",
+        "required": false,
+        "enums": [
+          "enter",
+          "done",
+          "go",
+          "next",
+          "previous",
+          "search",
+          "send"
+        ],
+        "requiredInEnums": true,
+        "description": "定义虚拟键盘回车键的操作标签"
+      },
+      {
+        "key": "confirm-hold",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": true,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "点击键盘回车键时是否保持键盘不收起"
+      }
+    ],
+    "events": [
+      "ready",
+      "focus",
+      "blur",
+      "input",
+      "statuschange"
+    ],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/editor.html"
+  }
+}

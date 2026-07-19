@@ -1,0 +1,58 @@
+{
+  "store-coupon": {
+    "description": "小程序内嵌微信小店优惠券，展示小店优惠券，并进行跳转交易。",
+    "attributeDescriptors": [
+      {
+        "key": "appid",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": true,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "小店appid。获取方式：小店后台 - 店铺管理 - 基础信息 - 账号信息 - 微信小店ID。"
+      },
+      {
+        "key": "coupon-id",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": true,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "优惠券id。获取小店优惠券id，可以通过小店后台 - 营销中心 - 优惠券。"
+      },
+      {
+        "key": "custom-style",
+        "types": [
+          "OBJECT"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "自定义样式。支持自定义的样式请查看custom-style。"
+      },
+      {
+        "key": "promoter-share-link",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "推客参数。对于「机构推广券」类型优惠券，通过该参数，支持推客染色，可以通过接口获取。"
+      }
+    ],
+    "events": [
+      "entersuccess",
+      "entererror"
+    ],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/store-coupon.html"
+  }
+}

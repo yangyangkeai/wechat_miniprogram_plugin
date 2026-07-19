@@ -1,0 +1,10 @@
+{
+  "span": {
+    "description": "用于支持内联文本和 image / navigator 的混排",
+    "attributeDescriptors": [],
+    "events": [],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/span.html"
+  }
+}

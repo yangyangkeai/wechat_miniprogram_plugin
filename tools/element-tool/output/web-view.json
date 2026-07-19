@@ -1,0 +1,26 @@
+{
+  "web-view": {
+    "description": "承载网页的容器。会自动铺满整个小程序页面，个人类型的小程序暂不支持使用。客户端 6.7.2 版本开始，navigationStyle: custom 对 web-view 组件无效",
+    "attributeDescriptors": [
+      {
+        "key": "src",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": false,
+        "description": "webview 指向网页的链接。可打开关联的公众号的文章，其它网页需登录小程序管理后台配置业务域名。"
+      }
+    ],
+    "events": [
+      "message",
+      "load",
+      "error"
+    ],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/web-view.html"
+  }
+}

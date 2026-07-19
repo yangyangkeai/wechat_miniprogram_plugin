@@ -1,0 +1,38 @@
+{
+  "sticky-section": {
+    "description": "吸顶布局容器，仅支持作为 <scroll-view type=\"custom\"> 模式的直接子节点",
+    "attributeDescriptors": [
+      {
+        "key": "push-pinned-header",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": true,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "吸顶元素重叠时是否继续上推"
+      },
+      {
+        "key": "padding",
+        "types": [
+          "ARRAY"
+        ],
+        "default": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "长度为 4 的数组，按 top、right、bottom、left 顺序指定内边距"
+      }
+    ],
+    "events": [],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/sticky-section.html"
+  }
+}

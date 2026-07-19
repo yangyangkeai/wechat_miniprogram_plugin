@@ -1,0 +1,22 @@
+{
+  "store-home": {
+    "description": "小程序内嵌微信小店首页，展示小店首页，并进行跳转交易。",
+    "attributeDescriptors": [
+      {
+        "key": "appid",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": true,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "小店appid。获取方式：小店后台 - 店铺管理 - 基础信息 - 账号信息 - 微信小店ID。"
+      }
+    ],
+    "events": [],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/store-home.html"
+  }
+}

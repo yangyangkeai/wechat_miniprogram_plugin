@@ -1,0 +1,85 @@
+{
+  "grid-view": {
+    "description": "Skyline 下网格布局容器 和 瀑布流布局容器。基础库版本 2.30.4 起提供 WebView 兼容实现。1. 仅支持作为 <scroll-view type=\"custom\"> 模式的直接子节点；2. 按需渲染节点，比 WebView 兼容实现具备更好的性能。",
+    "attributeDescriptors": [
+      {
+        "key": "type",
+        "types": [
+          "STRING"
+        ],
+        "default": "aligned",
+        "required": true,
+        "enums": [
+          "aligned",
+          "masonry"
+        ],
+        "requiredInEnums": true,
+        "description": "布局方式。aligned 表示每行高度由同一行中最大高度子节点决定；masonry 表示瀑布流，根据子元素高度自动布局。"
+      },
+      {
+        "key": "cross-axis-count",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 2,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "交叉轴元素数量"
+      },
+      {
+        "key": "max-cross-axis-extent",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 0,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "交叉轴元素最大范围"
+      },
+      {
+        "key": "main-axis-gap",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 0,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "主轴方向间隔"
+      },
+      {
+        "key": "cross-axis-gap",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 0,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "交叉轴方向间隔"
+      },
+      {
+        "key": "padding",
+        "types": [
+          "ARRAY"
+        ],
+        "default": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "长度为 4 的数组，按 top、right、bottom、left 顺序指定内边距"
+      }
+    ],
+    "events": [],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/grid-view.html"
+  }
+}

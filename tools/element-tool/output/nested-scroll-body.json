@@ -1,0 +1,22 @@
+{
+  "nested-scroll-body": {
+    "description": "嵌套 scroll-view 场景中属于里层 scroll-view 的节点，仅支持作为 <scroll-view type=\"nested\"> 模式的直接子节点。不支持复数子节点，渲染时会取其第一个子节点来渲染。具体用法可参考 scroll-view",
+    "attributeDescriptors": [
+      {
+        "key": "offset-top",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 0,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "滚动目标距离顶部的距离(px)。在外层 scroll-view 滚动时此组件会在主轴方向会逐渐撑开，直到此组件顶部与视窗顶部距离为该属性值时才开始里层 scroll-view 的滚动。默认为 0，即表示此组件撑开到顶部与视窗顶部齐平时才开始里层 scroll-view 的滚动。"
+      }
+    ],
+    "events": [],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/nested-scroll-body.html"
+  }
+}

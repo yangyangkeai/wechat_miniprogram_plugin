@@ -1,0 +1,60 @@
+{
+  "switch": {
+    "description": "开关选择器。",
+    "attributeDescriptors": [
+      {
+        "key": "checked",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否选中"
+      },
+      {
+        "key": "disabled",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否禁用"
+      },
+      {
+        "key": "type",
+        "types": [
+          "STRING"
+        ],
+        "default": "switch",
+        "required": false,
+        "enums": [
+          "switch",
+          "checkbox"
+        ],
+        "requiredInEnums": true,
+        "description": "样式，有效值：switch, checkbox"
+      },
+      {
+        "key": "color",
+        "types": [
+          "STRING"
+        ],
+        "default": "#04BE02",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "switch 的颜色，同 css 的 color"
+      }
+    ],
+    "events": [
+      "change"
+    ],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/switch.html"
+  }
+}

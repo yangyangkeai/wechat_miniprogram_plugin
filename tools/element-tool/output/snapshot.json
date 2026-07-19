@@ -1,0 +1,25 @@
+{
+  "snapshot": {
+    "description": "截图组件。支持将其子节点的渲染结果导出成图片，该组件需配合 snapshot 接口使用。目前仅在 Skyline 渲染引擎下支持。",
+    "attributeDescriptors": [
+      {
+        "key": "mode",
+        "types": [
+          "STRING"
+        ],
+        "default": "view",
+        "required": true,
+        "enums": [
+          "view",
+          "picture"
+        ],
+        "requiredInEnums": true,
+        "description": "渲染模式"
+      }
+    ],
+    "events": [],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/snapshot.html"
+  }
+}

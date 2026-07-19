@@ -1,0 +1,550 @@
+{
+  "aria-component": {
+    "description": "满足视障人士对于小程序的访问需求。为了更好地满足视障人士对于小程序的访问需求，基础库自 2.7.1 起，支持部分 ARIA 标签。无障碍特性在读屏模式下可以访问，iOS 可通过设置->通用->辅助功能->旁白打开。",
+    "attributeDescriptors": [
+      {
+        "key": "aria-role",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "组件的角色。当设置为 'img' 时，读屏模式下聚焦后系统会朗读出 '图像'；设置为 'button' 时，聚焦后系统朗读出 '按钮'。"
+      },
+      {
+        "key": "aria-label",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "组件附带的额外信息，聚焦后系统会自动朗读出来。"
+      },
+      {
+        "key": "aria-activedescendant",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "无障碍属性"
+      },
+      {
+        "key": "aria-atomic",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "无障碍属性"
+      },
+      {
+        "key": "aria-autocomplete",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "无障碍属性"
+      },
+      {
+        "key": "aria-busy",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "无障碍属性"
+      },
+      {
+        "key": "aria-checked",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "无障碍属性"
+      },
+      {
+        "key": "aria-colcount",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "无障碍属性"
+      },
+      {
+        "key": "aria-colindex",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "无障碍属性"
+      },
+      {
+        "key": "aria-colspan",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "无障碍属性"
+      },
+      {
+        "key": "aria-controls",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "无障碍属性"
+      },
+      {
+        "key": "aria-current",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "无障碍属性"
+      },
+      {
+        "key": "aria-describedby",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "无障碍属性"
+      },
+      {
+        "key": "aria-details",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "无障碍属性"
+      },
+      {
+        "key": "aria-disabled",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "无障碍属性"
+      },
+      {
+        "key": "aria-dropeffect",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "无障碍属性"
+      },
+      {
+        "key": "aria-errormessage",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "无障碍属性"
+      },
+      {
+        "key": "aria-expanded",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "无障碍属性"
+      },
+      {
+        "key": "aria-flowto",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "无障碍属性"
+      },
+      {
+        "key": "aria-grabbed",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "无障碍属性"
+      },
+      {
+        "key": "aria-haspopup",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "无障碍属性"
+      },
+      {
+        "key": "aria-hidden",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "无障碍属性"
+      },
+      {
+        "key": "aria-invalid",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "无障碍属性"
+      },
+      {
+        "key": "aria-keyshortcuts",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "无障碍属性"
+      },
+      {
+        "key": "aria-labelledby",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "无障碍属性"
+      },
+      {
+        "key": "aria-level",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "无障碍属性"
+      },
+      {
+        "key": "aria-live",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "无障碍属性"
+      },
+      {
+        "key": "aria-modal",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "无障碍属性"
+      },
+      {
+        "key": "aria-multiline",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "无障碍属性"
+      },
+      {
+        "key": "aria-multiselectable",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "无障碍属性"
+      },
+      {
+        "key": "aria-orientation",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "无障碍属性"
+      },
+      {
+        "key": "aria-owns",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "无障碍属性"
+      },
+      {
+        "key": "aria-placeholder",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "无障碍属性"
+      },
+      {
+        "key": "aria-posinset",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "无障碍属性"
+      },
+      {
+        "key": "aria-pressed",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "无障碍属性"
+      },
+      {
+        "key": "aria-readonly",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "无障碍属性"
+      },
+      {
+        "key": "aria-relevant",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "无障碍属性"
+      },
+      {
+        "key": "aria-required",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "无障碍属性"
+      },
+      {
+        "key": "aria-roledescription",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "无障碍属性"
+      },
+      {
+        "key": "aria-rowcount",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "无障碍属性"
+      },
+      {
+        "key": "aria-rowindex",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "无障碍属性"
+      },
+      {
+        "key": "aria-rowspan",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "无障碍属性"
+      },
+      {
+        "key": "aria-selected",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "无障碍属性"
+      },
+      {
+        "key": "aria-setsize",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "无障碍属性"
+      },
+      {
+        "key": "aria-sort",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "无障碍属性"
+      },
+      {
+        "key": "aria-valuemax",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "无障碍属性"
+      },
+      {
+        "key": "aria-valuemin",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "无障碍属性"
+      },
+      {
+        "key": "aria-valuenow",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "无障碍属性"
+      },
+      {
+        "key": "aria-valuetext",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "无障碍属性"
+      }
+    ],
+    "events": [],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/aria-component.html"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "selection": {
+    "description": "局部文本选区。",
+    "attributeDescriptors": [
+      {
+        "key": "disable-context-menu",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否隐藏客户端原生文本选区按钮"
+      }
+    ],
+    "events": [
+      "selectionchange"
+    ],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/selection.html"
+  }
+}

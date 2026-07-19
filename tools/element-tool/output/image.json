@@ -1,0 +1,117 @@
+{
+  "image": {
+    "description": "图片。支持 JPG、PNG、SVG、WEBP、GIF 等格式，2.3.0 起支持云文件ID。",
+    "attributeDescriptors": [
+      {
+        "key": "src",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "图片资源地址"
+      },
+      {
+        "key": "mode",
+        "types": [
+          "STRING"
+        ],
+        "default": "scaleToFill",
+        "required": false,
+        "enums": [
+          "scaleToFill",
+          "aspectFit",
+          "aspectFill",
+          "widthFix",
+          "heightFix",
+          "top",
+          "bottom",
+          "center",
+          "left",
+          "right",
+          "top left",
+          "top right",
+          "bottom left",
+          "bottom right"
+        ],
+        "requiredInEnums": true,
+        "description": "图片裁剪、缩放的模式"
+      },
+      {
+        "key": "show-menu-by-longpress",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "长按图片显示发送给朋友、收藏、保存图片、搜一搜、打开名片/前往群聊/打开小程序（若图片中包含对应二维码或小程序码）的菜单。"
+      },
+      {
+        "key": "fade-in",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否渐显"
+      },
+      {
+        "key": "preload",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否预加载图片，即设置图片 src 时就触发图片下载和解码"
+      },
+      {
+        "key": "webp",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "默认不解析 webP 格式，只支持网络资源"
+      },
+      {
+        "key": "lazy-load",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "图片懒加载，在即将进入一定范围（上下三屏）时才开始加载。Skyline 默认懒加载。"
+      },
+      {
+        "key": "forceHttps",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "自动将 http 链接替换为 https 链接"
+      }
+    ],
+    "events": [
+      "error",
+      "load"
+    ],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/image.html"
+  }
+}

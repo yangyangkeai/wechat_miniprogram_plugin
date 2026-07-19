@@ -1,0 +1,172 @@
+{
+  "navigator": {
+    "description": "页面链接。navigator 在 Skyline 下视为文本节点，只能嵌套文本节点（如 text），不能嵌套 view、button 等普通节点。新增 span 组件用于内联文本和图片。",
+    "attributeDescriptors": [
+      {
+        "key": "target",
+        "types": [
+          "STRING"
+        ],
+        "default": "self",
+        "required": false,
+        "enums": [
+          "self",
+          "miniProgram"
+        ],
+        "requiredInEnums": true,
+        "description": "在哪个目标上发生跳转，默认当前小程序"
+      },
+      {
+        "key": "url",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "当前小程序内的跳转链接"
+      },
+      {
+        "key": "open-type",
+        "types": [
+          "STRING"
+        ],
+        "default": "navigate",
+        "required": false,
+        "enums": [
+          "navigate",
+          "redirect",
+          "switchTab",
+          "reLaunch",
+          "navigateBack",
+          "exit"
+        ],
+        "requiredInEnums": true,
+        "description": "跳转方式"
+      },
+      {
+        "key": "delta",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 1,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "当 open-type 为 'navigateBack' 时有效，表示回退的层数"
+      },
+      {
+        "key": "app-id",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "当 target=\"miniProgram\" 且 open-type=\"navigate\" 时有效，要打开的小程序 appId"
+      },
+      {
+        "key": "path",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "当 target=\"miniProgram\" 且 open-type=\"navigate\" 时有效，打开的页面路径，如果为空则打开首页"
+      },
+      {
+        "key": "extra-data",
+        "types": [
+          "OBJECT"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "当 target=\"miniProgram\" 且 open-type=\"navigate/navigateBack\" 时有效，需要传递给目标小程序的数据，目标小程序可在 App.onLaunch()，App.onShow() 中获取到这份数据。"
+      },
+      {
+        "key": "version",
+        "types": [
+          "STRING"
+        ],
+        "default": "release",
+        "required": false,
+        "enums": [
+          "develop",
+          "trial",
+          "release"
+        ],
+        "requiredInEnums": true,
+        "description": "当 target=\"miniProgram\" 且 open-type=\"navigate\" 时有效，要打开的小程序版本"
+      },
+      {
+        "key": "short-link",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "当 target=\"miniProgram\" 时有效，当传递该参数后，可以不传 app-id 和 path。链接可以通过【小程序菜单】->【复制链接】获取。"
+      },
+      {
+        "key": "hover-class",
+        "types": [
+          "STRING"
+        ],
+        "default": "navigator-hover",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "指定点击时的样式类，当 hover-class=\"none\" 时，没有点击态效果"
+      },
+      {
+        "key": "hover-stop-propagation",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "指定是否阻止本节点的祖先节点出现点击态"
+      },
+      {
+        "key": "hover-start-time",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 50,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "按住后多久出现点击态，单位毫秒"
+      },
+      {
+        "key": "hover-stay-time",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 600,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "手指松开后点击态保留时间，单位毫秒"
+      }
+    ],
+    "events": [
+      "success",
+      "fail",
+      "complete"
+    ],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/navigator.html"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "keyboard-accessory": {
+    "description": "设置 input / textarea 聚焦时键盘上方 cover-view / cover-image 工具栏视图。视图最大高度为 200px。",
+    "attributeDescriptors": [],
+    "events": [],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/keyboard-accessory.html"
+  }
+}

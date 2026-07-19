@@ -1,0 +1,67 @@
+{
+  "rich-text": {
+    "description": "富文本。",
+    "attributeDescriptors": [
+      {
+        "key": "nodes",
+        "types": [
+          "ARRAY",
+          "STRING"
+        ],
+        "default": [],
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "节点列表/HTML String"
+      },
+      {
+        "key": "space",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": false,
+        "enums": [
+          "ensp",
+          "emsp",
+          "nbsp"
+        ],
+        "requiredInEnums": true,
+        "description": "显示连续空格"
+      },
+      {
+        "key": "user-select",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "文本是否可选，该属性会使节点显示为 block"
+      },
+      {
+        "key": "mode",
+        "types": [
+          "STRING"
+        ],
+        "default": "default",
+        "required": false,
+        "enums": [
+          "default",
+          "compat",
+          "aggressive",
+          "inline-block",
+          "web",
+          "web-static"
+        ],
+        "requiredInEnums": true,
+        "description": "布局兼容模式"
+      }
+    ],
+    "events": [],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/rich-text.html"
+  }
+}

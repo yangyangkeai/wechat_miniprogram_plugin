@@ -1,0 +1,90 @@
+{
+  "camera": {
+    "description": "系统相机。扫码二维码功能，需升级微信客户端至6.7.3。需要用户授权 scope.camera。2.10.0起 initdone 事件返回 maxZoom，最大变焦范围，相关接口 CameraContext.setZoom。",
+    "attributeDescriptors": [
+      {
+        "key": "mode",
+        "types": [
+          "STRING"
+        ],
+        "default": "normal",
+        "required": false,
+        "enums": [
+          "normal",
+          "scanCode"
+        ],
+        "requiredInEnums": true,
+        "description": "应用模式，只在初始化时有效，不能动态变更"
+      },
+      {
+        "key": "resolution",
+        "types": [
+          "STRING"
+        ],
+        "default": "medium",
+        "required": false,
+        "enums": [
+          "low",
+          "medium",
+          "high"
+        ],
+        "requiredInEnums": true,
+        "description": "分辨率，不支持动态修改"
+      },
+      {
+        "key": "device-position",
+        "types": [
+          "STRING"
+        ],
+        "default": "back",
+        "required": false,
+        "enums": [
+          "front",
+          "back"
+        ],
+        "requiredInEnums": true,
+        "description": "摄像头朝向"
+      },
+      {
+        "key": "flash",
+        "types": [
+          "STRING"
+        ],
+        "default": "auto",
+        "required": false,
+        "enums": [
+          "auto",
+          "on",
+          "off",
+          "torch"
+        ],
+        "requiredInEnums": true,
+        "description": "闪光灯，值为auto, on, off"
+      },
+      {
+        "key": "frame-size",
+        "types": [
+          "STRING"
+        ],
+        "default": "medium",
+        "required": false,
+        "enums": [
+          "small",
+          "medium",
+          "large"
+        ],
+        "requiredInEnums": true,
+        "description": "指定期望的相机帧数据尺寸"
+      }
+    ],
+    "events": [
+      "stop",
+      "error",
+      "initdone",
+      "scancode"
+    ],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/camera.html"
+  }
+}

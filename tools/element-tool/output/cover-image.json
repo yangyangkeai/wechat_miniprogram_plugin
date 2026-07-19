@@ -1,0 +1,61 @@
+{
+  "cover-image": {
+    "description": "覆盖在原生组件之上的图片视图。可覆盖的原生组件同cover-view，支持嵌套在cover-view里。",
+    "attributeDescriptors": [
+      {
+        "key": "src",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "图标路径，支持临时路径、网络地址（1.6.0起支持）、云文件ID（2.2.3起支持）。"
+      },
+      {
+        "key": "referrer-policy",
+        "types": [
+          "STRING"
+        ],
+        "default": "no-referrer",
+        "required": false,
+        "enums": [
+          "origin",
+          "no-referrer"
+        ],
+        "requiredInEnums": true,
+        "description": "格式固定为 https://servicewechat.com/{appid}/{version}/page-frame.html，其中 {appid} 为小程序的 appid，{version} 为小程序的版本号，版本号为 0 表示为开发版、体验版以及审核版本，版本号为 devtools 表示为开发者工具，其余为正式版本；"
+      },
+      {
+        "key": "bindload",
+        "types": [
+          "EVENTHANDLE"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "图片加载成功时触发"
+      },
+      {
+        "key": "binderror",
+        "types": [
+          "EVENTHANDLE"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "图片加载失败时触发"
+      }
+    ],
+    "events": [
+      "load",
+      "error"
+    ],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/cover-image.html"
+  }
+}

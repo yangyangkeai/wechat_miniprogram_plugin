@@ -1,0 +1,528 @@
+{
+  "live-pusher": {
+    "description": "实时音视频录制（v2.9.1 起支持同层渲染）。需要用户授权 scope.camera、scope.record。",
+    "attributeDescriptors": [
+      {
+        "key": "url",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "推流地址。目前仅支持 rtmp 格式"
+      },
+      {
+        "key": "mode",
+        "types": [
+          "STRING"
+        ],
+        "default": "RTC",
+        "required": false,
+        "enums": [
+          "QVGA",
+          "HVGA",
+          "SD",
+          "HD",
+          "FHD",
+          "RTC"
+        ],
+        "requiredInEnums": true,
+        "description": "模式"
+      },
+      {
+        "key": "autopush",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "自动推流"
+      },
+      {
+        "key": "enableVideoCustomRender",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "自定义渲染，允许开发者自行处理所采集的视频帧，详见LivePusherContext"
+      },
+      {
+        "key": "muted",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否静音。即将废弃，可用 enable-mic 替代"
+      },
+      {
+        "key": "enable-camera",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": true,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "开启摄像头"
+      },
+      {
+        "key": "auto-focus",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": true,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "自动聚焦"
+      },
+      {
+        "key": "orientation",
+        "types": [
+          "STRING"
+        ],
+        "default": "vertical",
+        "required": false,
+        "enums": [
+          "vertical",
+          "horizontal"
+        ],
+        "requiredInEnums": true,
+        "description": "画面方向"
+      },
+      {
+        "key": "beauty",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 0,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "美颜，取值范围 0-9 ，0 表示关闭。鸿蒙 OS 暂不支持"
+      },
+      {
+        "key": "whiteness",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 0,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "美白，取值范围 0-9 ，0 表示关闭"
+      },
+      {
+        "key": "aspect",
+        "types": [
+          "STRING"
+        ],
+        "default": "9:16",
+        "required": false,
+        "enums": [
+          "3:4",
+          "9:16"
+        ],
+        "requiredInEnums": true,
+        "description": "宽高比，可选值有 3:4, 9:16"
+      },
+      {
+        "key": "min-bitrate",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 200,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "最小码率"
+      },
+      {
+        "key": "max-bitrate",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 1000,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "最大码率"
+      },
+      {
+        "key": "audio-quality",
+        "types": [
+          "STRING"
+        ],
+        "default": "high",
+        "required": false,
+        "enums": [
+          "high",
+          "low"
+        ],
+        "requiredInEnums": true,
+        "description": "高音质(48KHz)或低音质(16KHz)，值为high, low"
+      },
+      {
+        "key": "waiting-image",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "进入后台时推流的等待画面"
+      },
+      {
+        "key": "waiting-image-hash",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "等待画面资源的MD5值"
+      },
+      {
+        "key": "zoom",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "调整焦距"
+      },
+      {
+        "key": "device-position",
+        "types": [
+          "STRING"
+        ],
+        "default": "front",
+        "required": false,
+        "enums": [
+          "front",
+          "back"
+        ],
+        "requiredInEnums": true,
+        "description": "前置或后置，值为front, back"
+      },
+      {
+        "key": "background-mute",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "进入后台时是否静音（已废弃，默认退后台静音）"
+      },
+      {
+        "key": "mirror",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "设置推流画面是否镜像，产生的效果在 live-player 反应到"
+      },
+      {
+        "key": "remote-mirror",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "同 mirror 属性，后续 mirror 将废弃"
+      },
+      {
+        "key": "local-mirror",
+        "types": [
+          "STRING"
+        ],
+        "default": "auto",
+        "required": false,
+        "enums": [
+          "auto",
+          "enable",
+          "disable"
+        ],
+        "requiredInEnums": true,
+        "description": "控制本地预览画面是否镜像"
+      },
+      {
+        "key": "audio-reverb-type",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 0,
+        "required": false,
+        "enums": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "requiredInEnums": true,
+        "description": "音频混响类型"
+      },
+      {
+        "key": "enable-mic",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": true,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "开启或关闭麦克风"
+      },
+      {
+        "key": "enable-agc",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否开启音频自动增益"
+      },
+      {
+        "key": "enable-ans",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否开启音频噪声抑制"
+      },
+      {
+        "key": "audio-volume-type",
+        "types": [
+          "STRING"
+        ],
+        "default": "auto",
+        "required": false,
+        "enums": [
+          "auto",
+          "media",
+          "voicecall"
+        ],
+        "requiredInEnums": true,
+        "description": "音量类型"
+      },
+      {
+        "key": "video-width",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 360,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "上推的视频流的分辨率宽度"
+      },
+      {
+        "key": "video-height",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 640,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "上推的视频流的分辨率高度"
+      },
+      {
+        "key": "beauty-style",
+        "types": [
+          "STRING"
+        ],
+        "default": "smooth",
+        "required": false,
+        "enums": [
+          "smooth",
+          "nature"
+        ],
+        "requiredInEnums": true,
+        "description": "设置美颜类型。鸿蒙 OS 暂不支持"
+      },
+      {
+        "key": "filter",
+        "types": [
+          "STRING"
+        ],
+        "default": "standard",
+        "required": false,
+        "enums": [
+          "standard",
+          "pink",
+          "nostalgia",
+          "blues",
+          "romantic",
+          "cool",
+          "fresher",
+          "solor",
+          "aestheticism",
+          "whitening",
+          "cerisered"
+        ],
+        "requiredInEnums": true,
+        "description": "设置色彩滤镜"
+      },
+      {
+        "key": "picture-in-picture-mode",
+        "types": [
+          "STRING",
+          "ARRAY"
+        ],
+        "default": "",
+        "required": false,
+        "enums": [
+          "push",
+          "pop"
+        ],
+        "requiredInEnums": true,
+        "description": "设置小窗模式： push, pop，空字符串或通过数组形式设置多种模式"
+      },
+      {
+        "key": "voice-changer-type",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 0,
+        "required": false,
+        "enums": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "requiredInEnums": true,
+        "description": "变声类型。0：关闭变声；1：熊孩子；2：萝莉；3：大叔；4：重金属；6：外国人；7：困兽；8：死肥仔；9：强电流；10：重机械；11：空灵"
+      },
+      {
+        "key": "custom-effect",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否启动自定义特效，设定后不能更改"
+      },
+      {
+        "key": "skin-whiteness",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 0,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "自定义特效美白效果，取值 0~1。需要开启 custom-effect"
+      },
+      {
+        "key": "skin-smoothness",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 0,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "自定义特效磨皮效果，取值 0~1。需要开启 custom-effect"
+      },
+      {
+        "key": "face-thinness",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 0,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "自定义特效瘦脸效果，取值 0~1。需要开启 custom-effect"
+      },
+      {
+        "key": "eye-bigness",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 0,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "自定义特效大眼效果，取值 0~1。需要开启 custom-effect"
+      },
+      {
+        "key": "fps",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 15,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "帧率，有效值为 1~30"
+      },
+      {
+        "key": "mute-on-audio-conflict",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "音频冲突时是否静音"
+      }
+    ],
+    "events": [
+      "statechange",
+      "netstatus",
+      "error",
+      "bgmstart",
+      "bgmprogress",
+      "bgmcomplete",
+      "audiovolumenotify",
+      "enterpictureinpicture",
+      "leavepictureinpicture"
+    ],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/live-pusher.html"
+  }
+}

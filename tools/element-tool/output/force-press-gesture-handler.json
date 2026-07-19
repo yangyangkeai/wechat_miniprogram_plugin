@@ -1,0 +1,66 @@
+{
+  "force-press-gesture-handler": {
+    "description": "iPhone 设备重按时触发手势",
+    "attributeDescriptors": [
+      {
+        "key": "tag",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "声明手势协商时的组件标识"
+      },
+      {
+        "key": "worklet:ongesture",
+        "types": [
+          "EVENTHANDLER"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "手势识别成功的回调。回调参数：state (手势状态), absoluteX (相对于全局的 X 坐标), absoluteY (相对于全局的 Y 坐标), pressure (压力大小)"
+      },
+      {
+        "key": "worklet:should-accept-gesture",
+        "types": [
+          "CALLBACK"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "手势是否应该被识别"
+      },
+      {
+        "key": "simultaneous-handlers",
+        "types": [
+          "ARRAY"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "声明可同时触发的手势节点"
+      },
+      {
+        "key": "native-view",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "代理的原生节点类型"
+      }
+    ],
+    "events": [],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/force-press-gesture-handler.html"
+  }
+}

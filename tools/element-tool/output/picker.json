@@ -1,0 +1,153 @@
+{
+  "picker": {
+    "description": "从底部弹起的滚动选择器。",
+    "attributeDescriptors": [
+      {
+        "key": "header-text",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "选择器的标题，仅安卓可用"
+      },
+      {
+        "key": "mode",
+        "types": [
+          "STRING"
+        ],
+        "default": "selector",
+        "required": false,
+        "enums": [
+          "selector",
+          "multiSelector",
+          "time",
+          "date",
+          "region"
+        ],
+        "requiredInEnums": true,
+        "description": "选择器类型"
+      },
+      {
+        "key": "disabled",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否禁用"
+      },
+      {
+        "key": "range",
+        "types": [
+          "ARRAY"
+        ],
+        "default": [],
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "mode 为 selector 或 multiSelector 时，range 有效"
+      },
+      {
+        "key": "range-key",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "当 range 是一个 Object Array 时，通过 range-key 来指定 Object 中 key 的值作为选择器显示内容"
+      },
+      {
+        "key": "value",
+        "types": [
+          "NUMBER",
+          "ARRAY",
+          "STRING"
+        ],
+        "default": 0,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "表示当前选中的值。普通选择器中为表示下标的数字；多列选择器中为表示每列下标的数组；时间/日期选择器中为表示选中时间的字符串；省市区选择器中为表示选中省市区的数组。"
+      },
+      {
+        "key": "start",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "表示有效时间/日期范围的开始，字符串格式如 \"hh:mm\" 或 \"YYYY-MM-DD\""
+      },
+      {
+        "key": "end",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "表示有效时间/日期范围的结束，字符串格式如 \"hh:mm\" 或 \"YYYY-MM-DD\""
+      },
+      {
+        "key": "fields",
+        "types": [
+          "STRING"
+        ],
+        "default": "day",
+        "required": false,
+        "enums": [
+          "year",
+          "month",
+          "day"
+        ],
+        "requiredInEnums": true,
+        "description": "有效值 year,month,day，表示选择器的粒度（仅在 mode = date 时有效）"
+      },
+      {
+        "key": "custom-item",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "可为每一列的顶部添加一个自定义的项（仅在 mode = region 时有效）"
+      },
+      {
+        "key": "level",
+        "types": [
+          "STRING"
+        ],
+        "default": "region",
+        "required": false,
+        "enums": [
+          "province",
+          "city",
+          "region",
+          "sub-district"
+        ],
+        "requiredInEnums": true,
+        "description": "选择器层级（仅在 mode = region 时有效）"
+      }
+    ],
+    "events": [
+      "cancel",
+      "change",
+      "columnchange"
+    ],
+    "canOpen": true,
+    "canClose": true,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/picker.html"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "view": {
+    "description": "视图容器",
+    "attributeDescriptors": [
+      {
+        "key": "hover-class",
+        "types": [
+          "STRING"
+        ],
+        "default": "none",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "指定按下去的样式类。当 hover-class=\"none\" 时，没有点击态效果"
+      },
+      {
+        "key": "hover-stop-propagation",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "指定是否阻止本节点的祖先节点出现点击态"
+      },
+      {
+        "key": "hover-start-time",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 50,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "按住后多久出现点击态，单位毫秒"
+      },
+      {
+        "key": "hover-stay-time",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 400,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "手指松开后点击态保留时间，单位毫秒"
+      }
+    ],
+    "events": [],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/view.html"
+  }
+}

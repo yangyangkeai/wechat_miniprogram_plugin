@@ -1,0 +1,113 @@
+{
+  "open-container": {
+    "description": "容器转场动画组件。点击 <open-container> 组件，当使用 wx.navigateTo 跳转下一页面时，对其子节点和下一个页面进行过渡。下个页面从 <open-container> 所在位置大小渐显放大，同时 <open-container> 内容渐隐，过渡效果包含背景色、圆角和阴影。源页面 <open-container> 为 closed 状态，转场动画后为 open 状态。",
+    "attributeDescriptors": [
+      {
+        "key": "closed-color",
+        "types": [
+          "STRING"
+        ],
+        "default": "white",
+        "required": true,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "初始容器背景色"
+      },
+      {
+        "key": "closed-elevation",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 0,
+        "required": true,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "初始容器影深大小"
+      },
+      {
+        "key": "closed-border-radius",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 0,
+        "required": true,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "初始容器圆角大小"
+      },
+      {
+        "key": "middle-color",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": true,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "fadeThrough 模式下的过渡背景色"
+      },
+      {
+        "key": "open-color",
+        "types": [
+          "STRING"
+        ],
+        "default": "white",
+        "required": true,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "打开状态下容器背景色"
+      },
+      {
+        "key": "open-elevation",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 0,
+        "required": true,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "打开状态下容器影深大小"
+      },
+      {
+        "key": "open-border-radius",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 0,
+        "required": true,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "打开状态下容器圆角大小"
+      },
+      {
+        "key": "transition-duration",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 300,
+        "required": true,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "动画时长"
+      },
+      {
+        "key": "transition-type",
+        "types": [
+          "STRING"
+        ],
+        "default": "fade",
+        "required": true,
+        "enums": [
+          "fade",
+          "fadeThrough"
+        ],
+        "requiredInEnums": true,
+        "description": "动画类型"
+      }
+    ],
+    "events": [],
+    "canOpen": true,
+    "canClose": true,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/open-container.html"
+  }
+}

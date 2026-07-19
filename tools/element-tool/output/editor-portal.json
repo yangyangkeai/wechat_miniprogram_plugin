@@ -1,0 +1,22 @@
+{
+  "editor-portal": {
+    "description": "渲染 editor 组件的自定义区块。相关接口 EditorCtx.insertCustomBlock。",
+    "attributeDescriptors": [
+      {
+        "key": "key",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": true,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "自定义区块的 blockId"
+      }
+    ],
+    "events": [],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/editor-portal.html"
+  }
+}

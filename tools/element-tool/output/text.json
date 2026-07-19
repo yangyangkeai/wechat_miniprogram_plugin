@@ -1,0 +1,97 @@
+{
+  "text": {
+    "description": "文本。1. 内联文本只能用 text 组件，不能用 view，如 <text> foo <text>bar</text> </text>。2. 新增 span 组件用于内联文本和图片，如 <span> <image> </image> <text>bar</text> </span>",
+    "attributeDescriptors": [
+      {
+        "key": "selectable",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "文本是否可选 (已废弃)"
+      },
+      {
+        "key": "user-select",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "文本是否可选，该属性会使文本节点显示为 inline-block"
+      },
+      {
+        "key": "overflow",
+        "types": [
+          "STRING"
+        ],
+        "default": "visible",
+        "required": true,
+        "enums": [
+          "clip",
+          "fade",
+          "ellipsis",
+          "visible"
+        ],
+        "requiredInEnums": true,
+        "description": "文本溢出处理 (Skyline 特有属性)"
+      },
+      {
+        "key": "max-lines",
+        "types": [
+          "NUMBER"
+        ],
+        "default": null,
+        "required": true,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "限制文本最大行数"
+      },
+      {
+        "key": "select-on-gesture",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": true,
+        "required": true,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否允许通过手势选择文本，关闭后通常可以结合 SelectionContext.selectRange 接口使用"
+      },
+      {
+        "key": "space",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [
+          "ensp",
+          "emsp",
+          "nbsp"
+        ],
+        "requiredInEnums": true,
+        "description": "显示连续空格"
+      },
+      {
+        "key": "decode",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否解码"
+      }
+    ],
+    "events": [],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/text.html"
+  }
+}

@@ -1,0 +1,536 @@
+{
+  "scroll-view": {
+    "description": "可滚动视图区域。使用竖向滚动时，需要给scroll-view一个固定高度，通过 WXSS 设置 height。组件属性的长度单位默认为px，2.4.0起支持传入单位(rpx/px)。",
+    "attributeDescriptors": [
+      {
+        "key": "scroll-x",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "允许横向滚动"
+      },
+      {
+        "key": "scroll-y",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "允许纵向滚动"
+      },
+      {
+        "key": "upper-threshold",
+        "types": [
+          "NUMBER",
+          "STRING"
+        ],
+        "default": 50,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "距顶部/左边多远时，触发 scrolltoupper 事件"
+      },
+      {
+        "key": "lower-threshold",
+        "types": [
+          "NUMBER",
+          "STRING"
+        ],
+        "default": 50,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "距底部/右边多远时，触发 scrolltolower 事件"
+      },
+      {
+        "key": "scroll-top",
+        "types": [
+          "NUMBER",
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "设置竖向滚动条位置"
+      },
+      {
+        "key": "scroll-left",
+        "types": [
+          "NUMBER",
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "设置横向滚动条位置"
+      },
+      {
+        "key": "scroll-into-view",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "值应为某子元素id（id不能以数字开头）。设置哪个方向可滚动，则在哪个方向滚动到该元素"
+      },
+      {
+        "key": "scroll-into-view-offset",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 0,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "跳转到 scroll-into-view 目标节点时的额外偏移。skyline 自 3.1.0 版本开始支持，webview 自 3.6.0 版本开始支持。"
+      },
+      {
+        "key": "scroll-with-animation",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "在设置滚动条位置时使用动画过渡"
+      },
+      {
+        "key": "enable-back-to-top",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "iOS点击顶部状态栏、安卓双击标题栏时，滚动条返回顶部，只支持竖向。自 2.27.3 版本开始，若非显式设置为 false，则在显示尺寸大于屏幕 90% 时自动开启。鸿蒙 OS 暂不支持"
+      },
+      {
+        "key": "enable-passive",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "开启 passive 特性，能优化一定的滚动性能"
+      },
+      {
+        "key": "refresher-enabled",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "开启自定义下拉刷新"
+      },
+      {
+        "key": "refresher-threshold",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 45,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "设置自定义下拉刷新阈值"
+      },
+      {
+        "key": "refresher-default-style",
+        "types": [
+          "STRING"
+        ],
+        "default": "black",
+        "required": false,
+        "enums": [
+          "black",
+          "white",
+          "none"
+        ],
+        "requiredInEnums": true,
+        "description": "设置自定义下拉刷新默认样式，支持设置 black | white | none， none 表示不使用默认样式"
+      },
+      {
+        "key": "refresher-background",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "设置自定义下拉刷新区域背景颜色，默认为透明"
+      },
+      {
+        "key": "refresher-triggered",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "设置当前下拉刷新状态，true 表示下拉刷新已经被触发，false 表示下拉刷新未被触发"
+      },
+      {
+        "key": "bounces",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": true,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "iOS 下 scroll-view 边界弹性控制 (同时开启 enhanced 属性后生效)"
+      },
+      {
+        "key": "show-scrollbar",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": true,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "滚动条显隐控制，仅对垂直滚动条有效 (同时开启 enhanced 属性后生效)"
+      },
+      {
+        "key": "fast-deceleration",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "滑动减速速率控制, 仅在 iOS 下生效 (同时开启 enhanced 属性后生效)"
+      },
+      {
+        "key": "scroll-anchoring",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "开启 scroll anchoring 特性，即控制滚动位置不随内容变化而抖动，可参考 CSS overflow-anchor 属性。webview 仅在 iOS 下生效。skyline 自 3.6.2 版本开始支持，默认为 true 。"
+      },
+      {
+        "key": "type",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": false,
+        "enums": [
+          "list",
+          "custom",
+          "nested"
+        ],
+        "requiredInEnums": true,
+        "description": "渲染模式"
+      },
+      {
+        "key": "associative-container",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": false,
+        "enums": [
+          "draggable-sheet",
+          "nested-scroll-view",
+          "pop-gesture"
+        ],
+        "requiredInEnums": true,
+        "description": "关联的滚动容器"
+      },
+      {
+        "key": "reverse",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否反向滚动。一般初始滚动位置是在顶部，反向滚动则是在底部。"
+      },
+      {
+        "key": "clip",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": true,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否对溢出进行裁剪，默认开启"
+      },
+      {
+        "key": "cache-extent",
+        "types": [
+          "NUMBER"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "指定视口外渲染区域的距离，默认情况下视口外节点不渲染。指定 cache-extent 可优化滚动体验和加载速度，但会提高内存占用且影响首屏速度，可按需启用。"
+      },
+      {
+        "key": "min-drag-distance",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 18,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "指定 scroll-view 触发滚动的最小拖动距离。仅在 scroll-view 和其他组件存在手势冲突时使用，可通过调整该属性使得滚动更加灵敏。"
+      },
+      {
+        "key": "scroll-into-view-within-extent",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "只 scroll-into-view 到 cacheExtent 以内的目标节点，性能更佳"
+      },
+      {
+        "key": "scroll-into-view-alignment",
+        "types": [
+          "STRING"
+        ],
+        "default": "start",
+        "required": false,
+        "enums": [
+          "start",
+          "center",
+          "end",
+          "nearest"
+        ],
+        "requiredInEnums": true,
+        "description": "指定 scroll-into-view 目标节点在视口内的位置"
+      },
+      {
+        "key": "worklet:onscrollstart",
+        "types": [
+          "WORKLET"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "同 bindscrollstart，但仅支持 worklet 作为回调"
+      },
+      {
+        "key": "worklet:onscrollupdate",
+        "types": [
+          "WORKLET"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "bindscroll ，但仅支持 worklet 作为回调"
+      },
+      {
+        "key": "worklet:onscrollend",
+        "types": [
+          "WORKLET"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "同 bindscrollend，但仅支持 worklet 作为回调"
+      },
+      {
+        "key": "worklet:adjust-deceleration-velocity",
+        "types": [
+          "CALLBACK"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "指定手指抬起时做惯性滚动的初速度。(velocity: number) => number"
+      },
+      {
+        "key": "padding",
+        "types": [
+          "ARRAY"
+        ],
+        "default": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "长度为 4 的数组，按 top、right、bottom、left 顺序指定内边距"
+      },
+      {
+        "key": "refresher-two-level-enabled",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "开启下拉二级能力"
+      },
+      {
+        "key": "refresher-two-level-triggered",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "设置打开/关闭二级"
+      },
+      {
+        "key": "refresher-two-level-threshold",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 150,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "下拉二级阈值"
+      },
+      {
+        "key": "refresher-two-level-close-threshold",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 80,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "滑动返回时关闭二级的阈值"
+      },
+      {
+        "key": "refresher-two-level-scroll-enabled",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "处于二级状态时是否可滑动"
+      },
+      {
+        "key": "refresher-ballistic-refresh-enabled",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "惯性滚动是否触发下拉刷新"
+      },
+      {
+        "key": "refresher-two-level-pinned",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "即将打开二级时否定住"
+      },
+      {
+        "key": "enable-flex",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "启用 flexbox 布局。开启后，当前节点声明了 display: flex 就会成为 flex container，并作用于其孩子节点。"
+      },
+      {
+        "key": "enhanced",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "启用 scroll-view 增强特性，启用后可通过 ScrollViewContext 操作 scroll-view。鸿蒙 OS 暂不支持 enhanced 及其相关的属性和方法。"
+      },
+      {
+        "key": "paging-enabled",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "分页滑动效果 (同时开启 enhanced 属性后生效)"
+      },
+      {
+        "key": "using-sticky",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "使 scroll-view 下的 position sticky 特性生效，否则滚动一屏后 sticky 元素会被隐藏"
+      }
+    ],
+    "events": [
+      "dragstart",
+      "dragging",
+      "dragend",
+      "scrolltoupper",
+      "scrolltolower",
+      "scroll",
+      "refresherpulling",
+      "refresherrefresh",
+      "refresherrestore",
+      "refresherabort",
+      "scrollstart",
+      "scrollend",
+      "refresherwillrefresh",
+      "refresherstatuschange"
+    ],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/scroll-view.html"
+  }
+}

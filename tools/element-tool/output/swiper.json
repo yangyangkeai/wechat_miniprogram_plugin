@@ -1,0 +1,359 @@
+{
+  "swiper": {
+    "description": "滑块视图容器。其中只可放置swiper-item组件，否则会导致未定义的行为。",
+    "attributeDescriptors": [
+      {
+        "key": "indicator-dots",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否显示面板指示点"
+      },
+      {
+        "key": "indicator-color",
+        "types": [
+          "STRING"
+        ],
+        "default": "rgba(0, 0, 0, .3)",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "指示点颜色"
+      },
+      {
+        "key": "indicator-active-color",
+        "types": [
+          "STRING"
+        ],
+        "default": "#000000",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "当前选中的指示点颜色"
+      },
+      {
+        "key": "autoplay",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否自动切换"
+      },
+      {
+        "key": "current",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 0,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "当前所在滑块的 index"
+      },
+      {
+        "key": "interval",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 5000,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "自动切换时间间隔"
+      },
+      {
+        "key": "duration",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 500,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "滑动动画时长"
+      },
+      {
+        "key": "circular",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否采用衔接滑动"
+      },
+      {
+        "key": "vertical",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "滑动方向是否为纵向"
+      },
+      {
+        "key": "display-multiple-items",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 1,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "同时显示的滑块数量"
+      },
+      {
+        "key": "previous-margin",
+        "types": [
+          "STRING"
+        ],
+        "default": "0px",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "前边距，可用于露出前一项的一小部分，接受 px 和 rpx 值"
+      },
+      {
+        "key": "next-margin",
+        "types": [
+          "STRING"
+        ],
+        "default": "0px",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "后边距，可用于露出后一项的一小部分，接受 px 和 rpx 值。skyline 于 3.5.1 版本支持"
+      },
+      {
+        "key": "easing-function",
+        "types": [
+          "STRING"
+        ],
+        "default": "default",
+        "required": false,
+        "enums": [
+          "default",
+          "linear",
+          "easeInCubic",
+          "easeOutCubic",
+          "easeInOutCubic"
+        ],
+        "requiredInEnums": true,
+        "description": "指定 swiper 切换缓动动画类型"
+      },
+      {
+        "key": "direction",
+        "types": [
+          "STRING"
+        ],
+        "default": "all",
+        "required": false,
+        "enums": [
+          "all",
+          "positive",
+          "negative"
+        ],
+        "requiredInEnums": true,
+        "description": "指定 swiper 滑动方向"
+      },
+      {
+        "key": "layout-type",
+        "types": [
+          "STRING"
+        ],
+        "default": "normal",
+        "required": false,
+        "enums": [
+          "normal",
+          "stackLeft",
+          "stackRight",
+          "tinder",
+          "transformer"
+        ],
+        "requiredInEnums": true,
+        "description": "渲染模式"
+      },
+      {
+        "key": "transformer-type",
+        "types": [
+          "STRING"
+        ],
+        "default": "scaleAndFade",
+        "required": false,
+        "enums": [
+          "scaleAndFade",
+          "accordion",
+          "threeD",
+          "zoomIn",
+          "zoomOut",
+          "deepthPage"
+        ],
+        "requiredInEnums": true,
+        "description": "layout-type 为 transformer 时指定动画类型"
+      },
+      {
+        "key": "indicator-type",
+        "types": [
+          "STRING"
+        ],
+        "default": "normal",
+        "required": false,
+        "enums": [
+          "normal",
+          "worm",
+          "wormThin",
+          "wormUnderground",
+          "wormThinUnderground",
+          "expand",
+          "jump",
+          "jumpWithOffset",
+          "scroll",
+          "scrollFixedCenter",
+          "slide",
+          "slideUnderground",
+          "scale",
+          "swap",
+          "swapYRotation",
+          "color"
+        ],
+        "requiredInEnums": true,
+        "description": "指示点动画类型"
+      },
+      {
+        "key": "indicator-margin",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 10,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "指示点四周边距"
+      },
+      {
+        "key": "indicator-spacing",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 4,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "指示点间距"
+      },
+      {
+        "key": "indicator-radius",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 4,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "指示点圆角大小"
+      },
+      {
+        "key": "indicator-width",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 8,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "指示点宽度"
+      },
+      {
+        "key": "indicator-height",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 8,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "指示点高度"
+      },
+      {
+        "key": "indicator-alignment",
+        "types": [
+          "ARRAY",
+          "STRING"
+        ],
+        "default": "auto",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "指示点的相对位置"
+      },
+      {
+        "key": "indicator-offset",
+        "types": [
+          "ARRAY"
+        ],
+        "default": [
+          0,
+          0
+        ],
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "指示点位置的偏移量"
+      },
+      {
+        "key": "scroll-with-animation",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": true,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "改变 current 时使用动画过渡"
+      },
+      {
+        "key": "cache-extent",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 0,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "缓存区域大小，值为 1 表示提前渲染上下各一屏区域（swiper 容器大小）"
+      },
+      {
+        "key": "snap-to-edge",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "当 swiper-item 的个数大于等于 2，关闭 circular 并且开启 previous-margin 或 next-margin 的时候，可以指定这个边距是否应用到第一个、最后一个元素"
+      }
+    ],
+    "events": [
+      "change",
+      "transition",
+      "animationfinish",
+      "scrollstart",
+      "scrollupdate",
+      "scrollend"
+    ],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/swiper.html"
+  }
+}

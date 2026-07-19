@@ -1,0 +1,12 @@
+{
+  "native-component": {
+    "description": "小程序中的部分组件是由客户端创建的原生组件，包括 camera、canvas、input、live-player、live-pusher、map、textarea、video。在支持同层渲染后，原生组件与其它组件可以随意叠加，有关层级的限制将不再存在。但需要注意的是，组件内部仍由原生渲染，样式一般还是对原生组件内部无效。",
+    "attributeDescriptors": [],
+    "events": [
+      "rendererror"
+    ],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/native-component.html"
+  }
+}

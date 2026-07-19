@@ -1,0 +1,94 @@
+{
+  "audio": {
+    "description": "音频。从基础库 1.6.0 开始，本接口停止维护，请使用 wx.createInnerAudioContext 代替。",
+    "attributeDescriptors": [
+      {
+        "key": "id",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "audio 组件的唯一标识符"
+      },
+      {
+        "key": "src",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "要播放音频的资源地址"
+      },
+      {
+        "key": "loop",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否循环播放"
+      },
+      {
+        "key": "controls",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否显示默认控件"
+      },
+      {
+        "key": "poster",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "默认控件上的音频封面的图片资源地址，如果 controls 属性值为 false 则设置 poster 无效"
+      },
+      {
+        "key": "name",
+        "types": [
+          "STRING"
+        ],
+        "default": "未知音频",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "默认控件上的音频名字，如果 controls 属性值为 false 则设置 name 无效"
+      },
+      {
+        "key": "author",
+        "types": [
+          "STRING"
+        ],
+        "default": "未知作者",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "默认控件上的作者名字，如果 controls 属性值为 false 则设置 author 无效"
+      }
+    ],
+    "events": [
+      "error",
+      "play",
+      "pause",
+      "timeupdate",
+      "ended"
+    ],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/audio.html"
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "store-product": {
+    "description": "小程序内嵌微信小店商品，展示小店商品，并进行跳转交易。支持小店优选联盟带货跟佣功能。",
+    "attributeDescriptors": [
+      {
+        "key": "appid",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": true,
+        "enums": [],
+        "requiredInEnums": false,
+        "description": "小店appid。获取方式：小店后台 - 店铺管理 - 基础信息 - 账号信息 - 微信小店ID。"
+      },
+      {
+        "key": "product-id",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": true,
+        "enums": [],
+        "requiredInEnums": false,
+        "description": "商品id。获取小店商品id，可以通过API获取(参考链接)或通过小店后台 - 商品管理 - 商品列表 - 规格/编码获取。"
+      },
+      {
+        "key": "product-promotion-link",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": false,
+        "description": "带货商品跟佣信息。若需要商品售卖时使用小店优选联盟带货跟佣功能，可以通过API获取带货商品跟佣信息(参考链接)。"
+      },
+      {
+        "key": "media-id",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": false,
+        "description": "媒体文件id。可以通过API获取(参考链接)。"
+      },
+      {
+        "key": "custom-style",
+        "types": [
+          "OBJECT"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": false,
+        "description": "自定义样式。支持自定义的样式请查看custom-style。"
+      },
+      {
+        "key": "custom-content",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": false,
+        "description": "开启自定义插槽。开启后可自行控制卡片内容。"
+      },
+      {
+        "key": "open-page",
+        "types": [
+          "STRING"
+        ],
+        "default": "product-detail",
+        "required": false,
+        "enums": [
+          "product-detail",
+          "gift-product-detail",
+          "buy",
+          "gift"
+        ],
+        "requiredInEnums": true,
+        "description": "设置点击打开的页面(同时开启 custom-content 属性后生效)。"
+      },
+      {
+        "key": "logo-position",
+        "types": [
+          "STRING"
+        ],
+        "default": "bottom-left",
+        "required": false,
+        "enums": [
+          "bottom-left",
+          "bottom-right"
+        ],
+        "requiredInEnums": true,
+        "description": "设置小店标识的位置，不允许隐藏(同时开启 custom-content 属性后生效)。"
+      }
+    ],
+    "events": [
+      "entersuccess",
+      "entererror"
+    ],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/store-product.html"
+  }
+}

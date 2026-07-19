@@ -1,0 +1,140 @@
+{
+  "progress": {
+    "description": "进度条。组件属性的长度单位默认为px，2.4.0起支持传入单位(rpx/px)。",
+    "attributeDescriptors": [
+      {
+        "key": "percent",
+        "types": [
+          "NUMBER"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "百分比0~100"
+      },
+      {
+        "key": "show-info",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "在进度条右侧显示百分比"
+      },
+      {
+        "key": "border-radius",
+        "types": [
+          "NUMBER",
+          "STRING"
+        ],
+        "default": 0,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "圆角大小"
+      },
+      {
+        "key": "font-size",
+        "types": [
+          "NUMBER",
+          "STRING"
+        ],
+        "default": 16,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "右侧百分比字体大小"
+      },
+      {
+        "key": "stroke-width",
+        "types": [
+          "NUMBER",
+          "STRING"
+        ],
+        "default": 6,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "进度条线的宽度"
+      },
+      {
+        "key": "color",
+        "types": [
+          "STRING"
+        ],
+        "default": "#09BB07",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "进度条颜色（请使用activeColor）"
+      },
+      {
+        "key": "activeColor",
+        "types": [
+          "STRING"
+        ],
+        "default": "#09BB07",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "已选择的进度条的颜色"
+      },
+      {
+        "key": "backgroundColor",
+        "types": [
+          "STRING"
+        ],
+        "default": "#EBEBEB",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "未选择的进度条的颜色"
+      },
+      {
+        "key": "active",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "进度条从左往右的动画"
+      },
+      {
+        "key": "active-mode",
+        "types": [
+          "STRING"
+        ],
+        "default": "backwards",
+        "required": false,
+        "enums": [
+          "backwards",
+          "forwards"
+        ],
+        "requiredInEnums": true,
+        "description": "backwards: 动画从头播；forwards：动画从上次结束点接着播"
+      },
+      {
+        "key": "duration",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 30,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "进度增加1%所需毫秒数"
+      }
+    ],
+    "events": [
+      "activeend"
+    ],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/progress.html"
+  }
+}

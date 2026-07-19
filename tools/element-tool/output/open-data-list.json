@@ -1,0 +1,35 @@
+{
+  "open-data-list": {
+    "description": "展示微信开放数据。",
+    "attributeDescriptors": [
+      {
+        "key": "type",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": true,
+        "enums": [
+          "groupMembers"
+        ],
+        "requiredInEnums": true,
+        "description": "开放数据类型"
+      },
+      {
+        "key": "members",
+        "types": [
+          "ARRAY"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "群成员group_openid列表"
+      }
+    ],
+    "events": [],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/open-data-list.html"
+  }
+}

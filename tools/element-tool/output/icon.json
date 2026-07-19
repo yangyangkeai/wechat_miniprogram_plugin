@@ -1,0 +1,55 @@
+{
+  "icon": {
+    "description": "图标组件",
+    "attributeDescriptors": [
+      {
+        "key": "type",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": true,
+        "enums": [
+          "success",
+          "success_no_circle",
+          "info",
+          "warn",
+          "waiting",
+          "cancel",
+          "download",
+          "search",
+          "clear"
+        ],
+        "requiredInEnums": true,
+        "description": "icon的类型，有效值：success, success_no_circle, info, warn, waiting, cancel, download, search, clear"
+      },
+      {
+        "key": "size",
+        "types": [
+          "NUMBER",
+          "STRING"
+        ],
+        "default": 23,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "icon的大小，单位默认为px，2.4.0起支持传入单位(rpx/px)，2.21.3起支持传入其余单位(rem 等)。"
+      },
+      {
+        "key": "color",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "icon的颜色，同css的color"
+      }
+    ],
+    "events": [],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/icon.html"
+  }
+}

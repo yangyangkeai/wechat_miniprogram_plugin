@@ -1,0 +1,85 @@
+{
+  "navigation-bar": {
+    "description": "页面导航条配置节点，用于指定导航栏的一些属性。只能是 page-meta 组件内的第一个节点，需要配合它一同使用。通过这个节点可以获得类似于调用 wx.setNavigationBarTitle wx.setNavigationBarColor 等接口调用的效果。",
+    "attributeDescriptors": [
+      {
+        "key": "title",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "导航条标题"
+      },
+      {
+        "key": "loading",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否在导航条显示 loading 加载提示"
+      },
+      {
+        "key": "front-color",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": false,
+        "enums": [
+          "#ffffff",
+          "#000000"
+        ],
+        "requiredInEnums": true,
+        "description": "导航条前景颜色值，包括按钮、标题、状态栏的颜色，仅支持 #ffffff 和 #000000"
+      },
+      {
+        "key": "background-color",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "导航条背景颜色值，有效值为十六进制颜色"
+      },
+      {
+        "key": "color-animation-duration",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 0,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "改变导航栏颜色时的动画时长，默认为 0 （即没有动画效果）"
+      },
+      {
+        "key": "color-animation-timing-func",
+        "types": [
+          "STRING"
+        ],
+        "default": "linear",
+        "required": false,
+        "enums": [
+          "linear",
+          "easeIn",
+          "easeOut",
+          "easeInOut"
+        ],
+        "requiredInEnums": true,
+        "description": "改变导航栏颜色时的动画方式，支持 linear 、 easeIn 、 easeOut 和 easeInOut"
+      }
+    ],
+    "events": [],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/navigation-bar.html"
+  }
+}

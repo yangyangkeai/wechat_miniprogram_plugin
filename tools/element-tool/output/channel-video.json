@@ -1,0 +1,94 @@
+{
+  "channel-video": {
+    "description": "小程序内嵌视频号视频组件，支持在小程序中播放视频号视频，并无弹窗跳转至视频号。注意：1. 若小程序与内嵌视频号视频为同主体，则内嵌视频号视频可支持自动播放； 2. 基础库 2.31.1 起，对于非个人主体小程序，若小程序于内嵌视频号视频非同主体，则内嵌视频号视频不可自动播放，即强制 autoplay=false。",
+    "attributeDescriptors": [
+      {
+        "key": "feed-id",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": true,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "仅视频号视频与小程序同主体时生效。若内嵌非同主体视频，请使用 feed-token。"
+      },
+      {
+        "key": "finder-user-name",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": true,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "视频号 id，以“sph”开头的id，可在视频号助手获取。视频号必须与当前小程序相同主体。"
+      },
+      {
+        "key": "feed-token",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": true,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "仅内嵌小程序非同主体视频号视频时使用，获取方式参考本指引。"
+      },
+      {
+        "key": "autoplay",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": true,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否自动播放。仅视频号视频与小程序同主体时支持设置为 true。"
+      },
+      {
+        "key": "loop",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否循环播放"
+      },
+      {
+        "key": "muted",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否静音播放"
+      },
+      {
+        "key": "object-fit",
+        "types": [
+          "STRING"
+        ],
+        "default": "contain",
+        "required": false,
+        "enums": [
+          "contain",
+          "fill",
+          "cover"
+        ],
+        "requiredInEnums": true,
+        "description": "当视频大小与 video 容器大小不一致时，视频的表现形式"
+      }
+    ],
+    "events": [
+      "error"
+    ],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/channel-video.html"
+  }
+}

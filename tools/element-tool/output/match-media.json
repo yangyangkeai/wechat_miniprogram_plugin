@@ -1,0 +1,91 @@
+{
+  "match-media": {
+    "description": "media query 匹配检测节点。可以指定一组 media query 规则，满足时，这个节点才会被展示。通过这个节点可以实现“页面宽高在某个范围时才展示某个区域”这样的效果。",
+    "attributeDescriptors": [
+      {
+        "key": "min-width",
+        "types": [
+          "NUMBER"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "页面最小宽度（ px 为单位）"
+      },
+      {
+        "key": "max-width",
+        "types": [
+          "NUMBER"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "页面最大宽度（ px 为单位）"
+      },
+      {
+        "key": "width",
+        "types": [
+          "NUMBER"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "页面宽度（ px 为单位）"
+      },
+      {
+        "key": "min-height",
+        "types": [
+          "NUMBER"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "页面最小高度（ px 为单位）"
+      },
+      {
+        "key": "max-height",
+        "types": [
+          "NUMBER"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "页面最大高度（ px 为单位）"
+      },
+      {
+        "key": "height",
+        "types": [
+          "NUMBER"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "页面高度（ px 为单位）"
+      },
+      {
+        "key": "orientation",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [
+          "landscape",
+          "portrait"
+        ],
+        "requiredInEnums": true,
+        "description": "屏幕方向"
+      }
+    ],
+    "events": [],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/match-media.html"
+  }
+}

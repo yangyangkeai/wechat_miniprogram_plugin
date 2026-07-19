@@ -1,0 +1,47 @@
+{
+  "store-gift": {
+    "description": "小程序送礼物接口支持小程序调用官方组件完成一次微信礼物的赠送，送礼后，用户可通过微信【我】-【订单与卡券】查看礼物订单详情。",
+    "attributeDescriptors": [
+      {
+        "key": "present-order-id",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": true,
+        "enums": [],
+        "requiredInEnums": false,
+        "description": "礼物订单id，调用“创建并发送礼物”或通过“查询礼物订单列表”open api拿到。"
+      },
+      {
+        "key": "open-id",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": true,
+        "enums": [],
+        "requiredInEnums": false,
+        "description": "用户openid。"
+      },
+      {
+        "key": "show-gift-card",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": true,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": false,
+        "description": "控制是否展示礼物卡片，默认展示礼物卡片。"
+      }
+    ],
+    "events": [
+      "success",
+      "error"
+    ],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/store-gift.html"
+  }
+}

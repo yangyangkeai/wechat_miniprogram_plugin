@@ -1,0 +1,166 @@
+{
+  "movable-view": {
+    "description": "可移动的视图容器，在页面中可以拖拽滑动。movable-view必须在 movable-area 组件中，并且必须是直接子节点，否则不能移动。",
+    "attributeDescriptors": [
+      {
+        "key": "direction",
+        "types": [
+          "STRING"
+        ],
+        "default": "none",
+        "required": false,
+        "enums": [
+          "all",
+          "vertical",
+          "horizontal",
+          "none"
+        ],
+        "requiredInEnums": true,
+        "description": "movable-view的移动方向，属性值有all、vertical、horizontal、none"
+      },
+      {
+        "key": "inertia",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "movable-view是否带有惯性"
+      },
+      {
+        "key": "out-of-bounds",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "超过可移动区域后，movable-view是否还可以移动"
+      },
+      {
+        "key": "x",
+        "types": [
+          "NUMBER",
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "定义x轴方向的偏移，如果x的值不在可移动范围内，会自动移动到可移动范围；改变x的值会触发动画；单位支持px（默认）、rpx；"
+      },
+      {
+        "key": "y",
+        "types": [
+          "NUMBER",
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "定义y轴方向的偏移，如果y的值不在可移动范围内，会自动移动到可移动范围；改变y的值会触发动画；单位支持px（默认）、rpx；"
+      },
+      {
+        "key": "damping",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 20,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "阻尼系数，用于控制x或y改变时的动画和过界回弹的动画，值越大移动越快"
+      },
+      {
+        "key": "friction",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 2,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "摩擦系数，用于控制惯性滑动的动画，值越大摩擦力越大，滑动越快停止；必须大于0，否则会被设置成默认值"
+      },
+      {
+        "key": "disabled",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否禁用"
+      },
+      {
+        "key": "scale",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否支持双指缩放，默认缩放手势生效区域是在movable-view内"
+      },
+      {
+        "key": "scale-min",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 0.1,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "定义缩放倍数最小值"
+      },
+      {
+        "key": "scale-max",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 10,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "定义缩放倍数最大值"
+      },
+      {
+        "key": "scale-value",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 1,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "定义缩放倍数，取值范围为 0.1 - 10"
+      },
+      {
+        "key": "animation",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": true,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否使用动画"
+      }
+    ],
+    "events": [
+      "change",
+      "scale",
+      "htouchmove",
+      "vtouchmove"
+    ],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/movable-view.html"
+  }
+}

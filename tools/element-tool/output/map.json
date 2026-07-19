@@ -1,0 +1,356 @@
+{
+  "map": {
+    "description": "map组件提供了地图展示、交互、叠加点线面及文字等功能，同时支持个性化地图样式，可结合地图服务 API 实现更丰富功能。",
+    "attributeDescriptors": [
+      {
+        "key": "longitude",
+        "types": [
+          "NUMBER"
+        ],
+        "default": null,
+        "required": true,
+        "enums": [],
+        "requiredInEnums": false,
+        "description": "中心经度"
+      },
+      {
+        "key": "latitude",
+        "types": [
+          "NUMBER"
+        ],
+        "default": null,
+        "required": true,
+        "enums": [],
+        "requiredInEnums": false,
+        "description": "中心纬度"
+      },
+      {
+        "key": "scale",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 16,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": false,
+        "description": "缩放级别，取值范围为3-20"
+      },
+      {
+        "key": "min-scale",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 3,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": false,
+        "description": "最小缩放级别"
+      },
+      {
+        "key": "max-scale",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 20,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": false,
+        "description": "最大缩放级别"
+      },
+      {
+        "key": "markers",
+        "types": [
+          "ARRAY"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": false,
+        "description": "标记点"
+      },
+      {
+        "key": "covers",
+        "types": [
+          "ARRAY"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": false,
+        "description": "即将移除，请使用 markers"
+      },
+      {
+        "key": "polyline",
+        "types": [
+          "ARRAY"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": false,
+        "description": "路线"
+      },
+      {
+        "key": "circles",
+        "types": [
+          "ARRAY"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": false,
+        "description": "圆"
+      },
+      {
+        "key": "controls",
+        "types": [
+          "ARRAY"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": false,
+        "description": "控件（即将废弃，建议使用 cover-view 代替）"
+      },
+      {
+        "key": "include-points",
+        "types": [
+          "ARRAY"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": false,
+        "description": "缩放视野以包含所有给定的坐标点"
+      },
+      {
+        "key": "show-location",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": false,
+        "description": "显示带有方向的当前定位点，3.10.0起需要用户位置授权。3.13.2起如果开发者没有手动申请，则会自动申请"
+      },
+      {
+        "key": "polygons",
+        "types": [
+          "ARRAY"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": false,
+        "description": "多边形"
+      },
+      {
+        "key": "subkey",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": false,
+        "description": "地图能力【个性化地图】使用的key，不支持动态修改"
+      },
+      {
+        "key": "layer-style",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 1,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": false,
+        "description": "地图能力【个性化地图】配置的 style"
+      },
+      {
+        "key": "rotate",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 0,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": false,
+        "description": "旋转角度，范围 0 ~ 360, 地图正北和设备 y 轴角度的夹角"
+      },
+      {
+        "key": "skew",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 0,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": false,
+        "description": "倾斜角度，范围 0 ~ 40 , 关于 z 轴的倾角"
+      },
+      {
+        "key": "enable-3D",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": false,
+        "description": "展示3D楼块"
+      },
+      {
+        "key": "show-compass",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": false,
+        "description": "显示指南针"
+      },
+      {
+        "key": "show-scale",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": false,
+        "description": "显示比例尺，工具暂不支持"
+      },
+      {
+        "key": "enable-overlooking",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": false,
+        "description": "开启俯视"
+      },
+      {
+        "key": "enable-auto-max-overlooking",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": false,
+        "description": "开启最大俯视角，俯视角度从 45 度拓展到 75 度"
+      },
+      {
+        "key": "enable-zoom",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": true,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": false,
+        "description": "是否支持缩放"
+      },
+      {
+        "key": "enable-scroll",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": true,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": false,
+        "description": "是否支持拖动"
+      },
+      {
+        "key": "enable-rotate",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": false,
+        "description": "是否支持旋转"
+      },
+      {
+        "key": "enable-satellite",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": false,
+        "description": "是否开启卫星图"
+      },
+      {
+        "key": "enable-traffic",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": false,
+        "description": "是否开启实时路况"
+      },
+      {
+        "key": "enable-poi",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": true,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": false,
+        "description": "是否展示 POI 点"
+      },
+      {
+        "key": "enable-building",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": false,
+        "description": "是否展示建筑物"
+      },
+      {
+        "key": "setting",
+        "types": [
+          "OBJECT"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": false,
+        "description": "配置项"
+      }
+    ],
+    "events": [
+      "tap",
+      "markertap",
+      "labeltap",
+      "controltap",
+      "callouttap",
+      "updated",
+      "regionchange",
+      "poitap",
+      "polylinetap",
+      "abilitysuccess",
+      "abilityfail",
+      "authsuccess",
+      "interpolatepoint",
+      "error"
+    ],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/map.html"
+  }
+}

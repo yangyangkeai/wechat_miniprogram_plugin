@@ -1,0 +1,322 @@
+{
+  "input": {
+    "description": "输入框。该组件是原生组件，使用时请注意相关限制",
+    "attributeDescriptors": [
+      {
+        "key": "value",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": true,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "输入框的初始内容"
+      },
+      {
+        "key": "type",
+        "types": [
+          "STRING"
+        ],
+        "default": "text",
+        "required": false,
+        "enums": [
+          "text",
+          "number",
+          "idcard",
+          "digit",
+          "safe-password",
+          "nickname"
+        ],
+        "requiredInEnums": true,
+        "description": "input 的类型"
+      },
+      {
+        "key": "password",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否是密码类型"
+      },
+      {
+        "key": "placeholder",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": true,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "输入框为空时占位符"
+      },
+      {
+        "key": "placeholder-style",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": true,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "指定 placeholder 的样式"
+      },
+      {
+        "key": "disabled",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否禁用"
+      },
+      {
+        "key": "maxlength",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 140,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "最大输入长度，设置为 -1 的时候不限制最大长度"
+      },
+      {
+        "key": "cursor-spacing",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 0,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "指定光标与键盘的距离，取 input 距离底部的距离和 cursor-spacing 指定的距离的最小值作为光标与键盘的距离"
+      },
+      {
+        "key": "auto-focus",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "(即将废弃，请直接使用 focus )自动聚焦，拉起键盘"
+      },
+      {
+        "key": "focus",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "获取焦点"
+      },
+      {
+        "key": "confirm-type",
+        "types": [
+          "STRING"
+        ],
+        "default": "done",
+        "required": false,
+        "enums": [
+          "send",
+          "search",
+          "next",
+          "go",
+          "done"
+        ],
+        "requiredInEnums": true,
+        "description": "设置键盘右下角按钮的文字，仅在type='text'时生效"
+      },
+      {
+        "key": "always-embed",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "强制 input 处于同层状态，默认 focus 时 input 会切到非同层状态 (仅在 iOS 下生效)"
+      },
+      {
+        "key": "confirm-hold",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "点击键盘右下角按钮时是否保持键盘不收起"
+      },
+      {
+        "key": "cursor",
+        "types": [
+          "NUMBER"
+        ],
+        "default": null,
+        "required": true,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "指定focus时的光标位置"
+      },
+      {
+        "key": "cursor-color",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": true,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "光标颜色。iOS 下的格式为十六进制颜色值 #000000，安卓下的只支持 default 和 green，Skyline 下无限制"
+      },
+      {
+        "key": "selection-start",
+        "types": [
+          "NUMBER"
+        ],
+        "default": -1,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "光标起始位置，自动聚集时有效，需与selection-end搭配使用"
+      },
+      {
+        "key": "selection-end",
+        "types": [
+          "NUMBER"
+        ],
+        "default": -1,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "光标结束位置，自动聚集时有效，需与selection-start搭配使用"
+      },
+      {
+        "key": "adjust-position",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": true,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "键盘弹起时，是否自动上推页面"
+      },
+      {
+        "key": "hold-keyboard",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "focus时，点击页面的时候不收起键盘"
+      },
+      {
+        "key": "safe-password-cert-path",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "安全键盘加密公钥的路径，只支持包内路径。鸿蒙 OS 暂不支持"
+      },
+      {
+        "key": "safe-password-length",
+        "types": [
+          "NUMBER"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "安全键盘输入密码长度。鸿蒙 OS 暂不支持"
+      },
+      {
+        "key": "safe-password-time-stamp",
+        "types": [
+          "NUMBER"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "安全键盘加密时间戳。鸿蒙 OS 暂不支持"
+      },
+      {
+        "key": "safe-password-nonce",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "安全键盘加密盐值。鸿蒙 OS 暂不支持"
+      },
+      {
+        "key": "safe-password-salt",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "安全键盘计算hash盐值，若指定custom-hash 则无效。鸿蒙 OS 暂不支持"
+      },
+      {
+        "key": "safe-password-custom-hash",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "安全键盘计算hash的算法表达式，如 md5(sha1('foo' + sha256(sm3(password + 'bar'))))。鸿蒙 OS 暂不支持"
+      },
+      {
+        "key": "placeholder-class",
+        "types": [
+          "STRING"
+        ],
+        "default": "input-placeholder",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "指定 placeholder 的样式类"
+      }
+    ],
+    "events": [
+      "input",
+      "change",
+      "focus",
+      "blur",
+      "confirm",
+      "keyboardheightchange",
+      "nicknamereview",
+      "selectionchange",
+      "keyboardcompositionstart",
+      "keyboardcompositionupdate",
+      "keyboardcompositionend"
+    ],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/input.html"
+  }
+}

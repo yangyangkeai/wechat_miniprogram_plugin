@@ -1,0 +1,563 @@
+{
+  "video": {
+    "description": "视频播放组件（v2.4.0 起支持同层渲染）。默认宽度 300px、高度 225px，可通过 wxss 设置宽高。",
+    "attributeDescriptors": [
+      {
+        "key": "src",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": true,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "要播放视频的资源地址，支持网络路径、本地临时路径、云文件ID（2.3.0）"
+      },
+      {
+        "key": "duration",
+        "types": [
+          "NUMBER"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "指定视频时长"
+      },
+      {
+        "key": "controls",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": true,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否显示默认播放控件（播放/暂停按钮、播放进度、时间）"
+      },
+      {
+        "key": "danmu-list",
+        "types": [
+          "ARRAY"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "弹幕列表"
+      },
+      {
+        "key": "danmu-btn",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否显示弹幕按钮，只在初始化时有效，不能动态变更"
+      },
+      {
+        "key": "enable-danmu",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否展示弹幕，只在初始化时有效，不能动态变更"
+      },
+      {
+        "key": "autoplay",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否自动播放"
+      },
+      {
+        "key": "loop",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否循环播放"
+      },
+      {
+        "key": "muted",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否静音播放"
+      },
+      {
+        "key": "initial-time",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 0,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "指定视频初始播放位置"
+      },
+      {
+        "key": "page-gesture",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "在非全屏模式下，是否开启亮度与音量调节手势（废弃，见 vslide-gesture）"
+      },
+      {
+        "key": "direction",
+        "types": [
+          "NUMBER"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [
+          "0",
+          "90",
+          "-90"
+        ],
+        "requiredInEnums": true,
+        "description": "设置全屏时视频的方向，不指定则根据宽高比自动判断"
+      },
+      {
+        "key": "show-progress",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": true,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "若不设置，宽度大于240时才会显示"
+      },
+      {
+        "key": "show-fullscreen-btn",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": true,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否显示全屏按钮"
+      },
+      {
+        "key": "show-play-btn",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": true,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否显示视频底部控制栏的播放按钮"
+      },
+      {
+        "key": "show-center-play-btn",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": true,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否显示视频中间的播放按钮"
+      },
+      {
+        "key": "enable-progress-gesture",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": true,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否开启控制进度的手势"
+      },
+      {
+        "key": "object-fit",
+        "types": [
+          "STRING"
+        ],
+        "default": "contain",
+        "required": false,
+        "enums": [
+          "contain",
+          "fill",
+          "cover"
+        ],
+        "requiredInEnums": true,
+        "description": "当视频大小与 video 容器大小不一致时，视频的表现形式"
+      },
+      {
+        "key": "poster",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "视频封面的图片网络资源地址或云文件ID。若 controls 属性值为 false 则设置 poster 无效"
+      },
+      {
+        "key": "show-mute-btn",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否显示静音按钮"
+      },
+      {
+        "key": "title",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "视频的标题，全屏时在顶部展示"
+      },
+      {
+        "key": "play-btn-position",
+        "types": [
+          "STRING"
+        ],
+        "default": "bottom",
+        "required": false,
+        "enums": [
+          "bottom",
+          "center"
+        ],
+        "requiredInEnums": true,
+        "description": "播放按钮的位置"
+      },
+      {
+        "key": "enable-play-gesture",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否开启播放手势，即双击切换播放/暂停"
+      },
+      {
+        "key": "auto-pause-if-navigate",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": true,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "当跳转 to 本小程序的其他页面时，是否自动暂停本页面的视频播放"
+      },
+      {
+        "key": "auto-pause-if-open-native",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": true,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "当跳转到其它微信原生页面时，是否自动暂停本页面的视频"
+      },
+      {
+        "key": "vslide-gesture",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "在非全屏模式下，是否开启亮度与音量调节手势（同 page-gesture）"
+      },
+      {
+        "key": "vslide-gesture-in-fullscreen",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": true,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "在全屏模式下，是否开启亮度与音量调节手势"
+      },
+      {
+        "key": "show-bottom-progress",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": true,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否展示底部进度条"
+      },
+      {
+        "key": "ad-unit-id",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": true,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "视频前贴广告单元ID，更多详情可参考开放能力视频前贴广告"
+      },
+      {
+        "key": "poster-for-crawler",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": true,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "用于给搜索等场景作为视频封面展示，建议使用无播放 icon 的视频封面图，只支持网络地址"
+      },
+      {
+        "key": "show-casting-button",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "显示投屏按钮。安卓在同层渲染下生效，支持 DLNA 协议；iOS 支持 AirPlay 和 DLNA 协议；鸿蒙 OS 暂不支持。可以通过 VideoContext 的相关方法进行操作。"
+      },
+      {
+        "key": "picture-in-picture-mode",
+        "types": [
+          "STRING",
+          "ARRAY"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [
+          "push",
+          "pop"
+        ],
+        "requiredInEnums": true,
+        "description": "设置小窗模式： push, pop，空字符串或通过数组形式设置多种模式（如： [\"push\", \"pop\"]）。鸿蒙 OS 暂不支持"
+      },
+      {
+        "key": "picture-in-picture-show-progress",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否在小窗模式下显示播放进度"
+      },
+      {
+        "key": "picture-in-picture-init-position",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "小窗模式下小窗的初始显示位置，格式为 (alignment, y)，其中 alignment 表示小窗吸附屏幕左侧还是右侧，可选值为 left、right，y 代表小窗最顶部所在的屏幕高度百分比"
+      },
+      {
+        "key": "enable-system-pip",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": true,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否支持 iOS 系统画中画，默认支持"
+      },
+      {
+        "key": "enable-auto-rotation",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否开启手机横屏时自动全屏，当系统设置开启自动旋转时生效"
+      },
+      {
+        "key": "show-screen-lock-button",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否显示锁屏按钮，仅在全屏时显示，锁屏后控制栏的操作"
+      },
+      {
+        "key": "show-snapshot-button",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否显示截屏按钮，仅在全屏时显示"
+      },
+      {
+        "key": "show-background-playback-button",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": true,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否展示后台小窗播放按钮。鸿蒙 OS 暂不支持。基础库 3.6.0 开始默认值为 true。"
+      },
+      {
+        "key": "background-poster",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "进入后台小窗播放后的通知栏图标（Android 独有）"
+      },
+      {
+        "key": "referrer-policy",
+        "types": [
+          "STRING"
+        ],
+        "default": "no-referrer",
+        "required": false,
+        "enums": [
+          "origin",
+          "no-referrer"
+        ],
+        "requiredInEnums": true,
+        "description": "格式固定为 https://servicewechat.com/{appid}/{version}/page-frame.html，其中 {appid} 为小程序的 appid，{version} 为小程序的版本号，版本号为 0 表示为开发版、体验版以及审核版本，版本号为 devtools 表示为开发者工具，其余为正式版本；"
+      },
+      {
+        "key": "is-drm",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否为 DRM 视频源"
+      },
+      {
+        "key": "is-live",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否为直播源"
+      },
+      {
+        "key": "provision-url",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "DRM 设备身份认证 url，仅 is-drm 为 true 时生效 (Android)"
+      },
+      {
+        "key": "certificate-url",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "DRM 设备身份认证 url，仅 is-drm 为 true 时生效 (iOS)"
+      },
+      {
+        "key": "license-url",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "DRM 获取加密信息 url，仅 is-drm 为 true 时生效"
+      },
+      {
+        "key": "preferred-peak-bit-rate",
+        "types": [
+          "NUMBER"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "指定码率上界，单位为比特每秒"
+      }
+    ],
+    "events": [
+      "bindplay",
+      "bindpause",
+      "bindended",
+      "bindtimeupdate",
+      "bindfullscreenchange",
+      "bindwaiting",
+      "binderror",
+      "bindprogress",
+      "bindloadedmetadata",
+      "bindcontrolstoggle",
+      "bindenterpictureinpicture",
+      "bindleavepictureinpicture",
+      "bindseekcomplete",
+      "bindcastinguserselect",
+      "bindcastingstatechange",
+      "bindcastinginterrupt"
+    ],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/video.html"
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "list-builder": {
+    "description": "列表构造器，仅支持作为 <scroll-view type=\"custom\"> 模式的直接子节点。具体用法可参考 scroll-view",
+    "attributeDescriptors": [
+      {
+        "key": "padding",
+        "types": [
+          "ARRAY"
+        ],
+        "default": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "长度为 4 的数组，按 top、right、bottom、left 顺序指定内边距"
+      },
+      {
+        "key": "type",
+        "types": [
+          "STRING"
+        ],
+        "default": "static",
+        "required": true,
+        "enums": [
+          "static",
+          "dynamic"
+        ],
+        "requiredInEnums": true,
+        "description": "类型，默认为定高模式"
+      },
+      {
+        "key": "list",
+        "types": [
+          "ARRAY"
+        ],
+        "default": null,
+        "required": true,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "需要用于渲染的列表"
+      },
+      {
+        "key": "child-count",
+        "types": [
+          "ARRAY"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "完整列表的长度，如果不传则取 list 的长度作为其值"
+      },
+      {
+        "key": "child-height",
+        "types": [
+          "ARRAY"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "列表项的高度，当 type 为 static 时必须传入"
+      },
+      {
+        "key": "initial-child-count",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 0,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "首次渲染时渲染的列表项数量，用于减少首次渲染时的白屏时长。不传则首屏也根据布局结果按需渲染"
+      }
+    ],
+    "events": [
+      "itembuild",
+      "itemdispose"
+    ],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/list-builder.html"
+  }
+}

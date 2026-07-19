@@ -1,0 +1,104 @@
+{
+  "official-account-publish": {
+    "description": "贴图组件。贴图组件为小程序开发者提供了在小程序里直接发表和消费贴图的能力。该组件可以帮助开发者实现社区讨论、用户交流的功能，并且让更多人通过贴图发现小程序。",
+    "attributeDescriptors": [
+      {
+        "key": "topic",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": false,
+        "description": "话题名称，最多20字，默认使用小程序名称。"
+      },
+      {
+        "key": "limit",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 4,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": false,
+        "description": "小程序页面内最多展示的贴图数量，超出后剩余的贴图需要点击「查看更多」前往查看。"
+      },
+      {
+        "key": "background-color",
+        "types": [
+          "STRING"
+        ],
+        "default": "#f7f7f7",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": false,
+        "description": "贴图组件的背景颜色。"
+      },
+      {
+        "key": "color-unity",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": false,
+        "description": "是否需要色彩统一，话题名称颜色和贴图卡片背景颜色是否对齐。"
+      },
+      {
+        "key": "placeholder",
+        "types": [
+          "STRING"
+        ],
+        "default": "来写下第一条吧",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": false,
+        "description": "无内容时的占位文案。"
+      },
+      {
+        "key": "show-related",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": true,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": false,
+        "description": "是否展示相关内容。"
+      },
+      {
+        "key": "recommend-path",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": false,
+        "description": "贴图链接卡片跳转页面。"
+      },
+      {
+        "key": "recommend-title",
+        "types": [
+          "STRING"
+        ],
+        "default": "",
+        "required": false,
+        "enums": [],
+        "requiredInEnums": false,
+        "description": "贴图链接卡片标题。"
+      }
+    ],
+    "events": [
+      "error",
+      "empty",
+      "publishsuccess",
+      "publishfail"
+    ],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/official-account-publish.html"
+  }
+}

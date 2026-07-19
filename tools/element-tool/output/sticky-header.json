@@ -1,0 +1,51 @@
+{
+  "sticky-header": {
+    "description": "吸顶布局容器，仅支持作为 <scroll-view type=\"custom\"> 模式的直接子节点或 sticky-section 组件直接子节点",
+    "attributeDescriptors": [
+      {
+        "key": "offset-top",
+        "types": [
+          "NUMBER"
+        ],
+        "default": 0,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "吸顶时与视窗顶部的距离(px)"
+      },
+      {
+        "key": "allow-overlapping",
+        "types": [
+          "BOOLEAN"
+        ],
+        "default": false,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "是否允许与前一个 sticky-header 重叠"
+      },
+      {
+        "key": "padding",
+        "types": [
+          "ARRAY"
+        ],
+        "default": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "长度为 4 的数组，按 top、right、bottom、left 顺序指定内边距(px)"
+      }
+    ],
+    "events": [
+      "stickontopchange"
+    ],
+    "canOpen": false,
+    "canClose": false,
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/sticky-header.html"
+  }
+}
