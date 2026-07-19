@@ -85,26 +85,27 @@ def generate_metadata(href, text):
     """
     url = "https://developers.weixin.qq.com/miniprogram/dev/component/" + href
     print(f"Fetching and extracting: {url} -> {text}.html")
-    
+
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
     }
     context = ssl._create_unverified_context()
     req = urllib.request.Request(url, headers=headers)
-    
+
     try:
         with urllib.request.urlopen(req, context=context) as response:
             html = response.read().decode('utf-8')
     except Exception as e:
         print(f"Error fetching {url}: {e}")
         return
-        
+
     extractor = ContentExtractor()
     extractor.feed(html)
     extracted_html = "".join(extractor.html_pieces).strip()
-    
+
     output_dir = os.path.dirname(__file__)
-    file_path = os.path.join(output_dir, f"{text}.html")
+    file_path = os.path.join(output_dir, f"output/{text}.html")
+    os.makedirs(os.path.dirname(file_path), exist_ok=True)
     try:
         with open(file_path, 'w', encoding='utf-8') as f:
             f.write(extracted_html)
@@ -127,20 +128,20 @@ class WeChatComponentParser(HTMLParser):
         self.current_href = None
         self.current_text = []
         self.results = []
-        
+
         self.table_depth = 0
         self.tr_depth = 0
 
     def handle_starttag(self, tag, attrs):
         attrs_dict = dict(attrs)
-        
+
         # Identify start of target table
         if tag == 'table':
             self.table_depth += 1
             classes = attrs_dict.get('class', '').split()
             if 'have-children-table' in classes:
                 self.in_target_table = True
-        
+
         # Identify start of target row inside the target table
         elif tag == 'tr' and self.in_target_table:
             self.tr_depth += 1
@@ -148,12 +149,12 @@ class WeChatComponentParser(HTMLParser):
             if 'have-children-tr' in classes:
                 self.in_target_row = True
                 self.col_index = -1
-                
+
         # Track <td> columns inside the target row
         elif tag == 'td' and self.in_target_row:
             self.in_td = True
             self.col_index += 1
-            
+
         # Target <a> tag inside the second column (index 1) of the target row
         elif tag == 'a' and self.in_target_row and self.col_index == 1:
             self.in_target_a = True
@@ -166,17 +167,17 @@ class WeChatComponentParser(HTMLParser):
                 self.table_depth -= 1
                 if self.table_depth == 0:
                     self.in_target_table = False
-        
+
         elif tag == 'tr':
             if self.tr_depth > 0:
                 self.tr_depth -= 1
                 if self.tr_depth == 0:
                     self.in_target_row = False
                     self.col_index = -1
-                
+
         elif tag == 'td':
             self.in_td = False
-            
+
         elif tag == 'a' and self.in_target_a:
             self.in_target_a = False
             text_content = "".join(self.current_text).strip()
@@ -195,13 +196,13 @@ def scrape_components():
     }
     context = ssl._create_unverified_context()
     req = urllib.request.Request(url, headers=headers)
-    
+
     with urllib.request.urlopen(req, context=context) as response:
         html = response.read().decode('utf-8')
-        
+
     parser = WeChatComponentParser()
     parser.feed(html)
-    
+
     for href, text in parser.results:
         generate_metadata(href, text)
 
