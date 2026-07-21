@@ -1,0 +1,22 @@
+{
+  "import": {
+    "description": "import可以在该文件中使用目标文件定义的template",
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/reference/wxml/import.html",
+    "attributeDescriptors": [
+      {
+        "key": "src",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": true,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "导入的wxml文件的路径"
+      }
+    ],
+    "events": [],
+    "canOpen": true,
+    "canClose": false
+  }
+}

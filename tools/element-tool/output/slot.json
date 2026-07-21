@@ -1,0 +1,21 @@
+{
+  "slot": {
+    "attributeDescriptors": [
+      {
+        "key": "name",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "此插槽的名称"
+      }
+    ],
+    "events": [],
+    "canOpen": true,
+    "canClose": false,
+    "description": "自定义组件中可嵌入内容"
+  }
+}

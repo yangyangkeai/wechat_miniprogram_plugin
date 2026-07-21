@@ -1,0 +1,44 @@
+{
+  "template": {
+    "description": "WXML提供模板（template），可以在模板中定义代码片段，然后在不同的地方调用。",
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/reference/wxml/template.html",
+    "attributeDescriptors": [
+      {
+        "key": "is",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "引用了模板的名称，对应template的name属性。"
+      },
+      {
+        "key": "name",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "模板的名称"
+      },
+      {
+        "key": "data",
+        "types": [
+          "OBJECT"
+        ],
+        "default": null,
+        "required": false,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "模板的数据"
+      }
+    ],
+    "events": [],
+    "canOpen": true,
+    "canClose": false
+  }
+}

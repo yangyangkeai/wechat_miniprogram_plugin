@@ -1,0 +1,9 @@
+{
+  "block": {
+    "attributeDescriptors": [],
+    "events": [],
+    "canOpen": true,
+    "canClose": false,
+    "description": "仅作为逻辑渲染的容器"
+  }
+}

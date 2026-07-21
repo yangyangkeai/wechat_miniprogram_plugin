@@ -1,0 +1,22 @@
+{
+  "include": {
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/reference/wxml/import.html",
+    "attributeDescriptors": [
+      {
+        "key": "src",
+        "types": [
+          "STRING"
+        ],
+        "default": null,
+        "required": true,
+        "enums": [],
+        "requiredInEnums": true,
+        "description": "要包含的wxml文件的路径"
+      }
+    ],
+    "events": [],
+    "canOpen": true,
+    "canClose": false,
+    "description": "include 可以将目标文件除了 <template/> <wxs/> 外的整个代码引入，相当于是拷贝到 include 位置"
+  }
+}
