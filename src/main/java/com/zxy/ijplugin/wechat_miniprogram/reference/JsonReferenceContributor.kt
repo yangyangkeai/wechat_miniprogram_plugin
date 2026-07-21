@@ -76,11 +76,11 @@ package com.zxy.ijplugin.wechat_miniprogram.reference
 import com.intellij.json.psi.*
 import com.intellij.patterns.PlatformPatterns
 import com.intellij.psi.*
-import com.intellij.psi.impl.source.xml.TagNameReference
 import com.intellij.psi.xml.XmlTag
 import com.intellij.util.ProcessingContext
 import com.zxy.ijplugin.wechat_miniprogram.context.RelateFileHolder
 import com.zxy.ijplugin.wechat_miniprogram.context.findMiniProgramRootDir
+import com.zxy.ijplugin.wechat_miniprogram.lang.wxml.tag.WxmlCustomComponentDescriptor
 import com.zxy.ijplugin.wechat_miniprogram.utils.findChildrenOfType
 
 class JsonReferenceContributor : PsiReferenceContributor() {
@@ -94,9 +94,7 @@ class JsonReferenceContributor : PsiReferenceContributor() {
                 if (wxmlPsiFile.findChildrenOfType<XmlTag>().filter {
                             it.name == element.name
                         }.any { xmlTag ->
-                            xmlTag.references.any {
-                                it is TagNameReference && it.resolve() == element
-                            }
+                            xmlTag.matchRegistration(element)
                         }) {
                     return arrayOf(JsonRegistrationReference(element))
                 }
@@ -249,12 +247,14 @@ class JsonRegistrationReference(jsonProperty: JsonProperty) :
         return wxmlPsiFile.findChildrenOfType<XmlTag>().filter {
             it.name == element.name
         }.filter { xmlTag ->
-            xmlTag.references.any {
-                it is TagNameReference && it.resolve() == element
-            }
+            xmlTag.matchRegistration(element)
         }.map {
             PsiElementResolveResult(it)
         }.toTypedArray()
     }
 
+}
+
+private fun XmlTag.matchRegistration(registration: JsonProperty): Boolean {
+    return (descriptor as? WxmlCustomComponentDescriptor)?.element == registration
 }

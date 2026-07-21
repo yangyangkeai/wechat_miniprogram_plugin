@@ -141,6 +141,7 @@ class WxmlXmlExtension : DefaultXmlExtension() {
         if (namespacePrefix != null && (namespacePrefix == "wx"
                         || namespacePrefix == "bind"
                         || namespacePrefix == "catch"
+                        || namespacePrefix == "generic"
                         || namespacePrefix == "model"
                         || namespacePrefix == "mark"
                         || namespacePrefix == "mut-bind"

@@ -76,16 +76,18 @@ package com.zxy.ijplugin.wechat_miniprogram.lang.wxml.tag
 import com.intellij.json.psi.JsonProperty
 import com.intellij.json.psi.JsonStringLiteral
 import com.intellij.psi.PsiElement
+import com.intellij.psi.PsiFile
 import com.intellij.psi.xml.XmlTag
 import com.intellij.xml.XmlAttributeDescriptor
 import com.intellij.xml.XmlElementDescriptor
+import com.zxy.ijplugin.wechat_miniprogram.context.RelateFileHolder
 import com.intellij.xml.impl.schema.AnyXmlAttributeDescriptor
 import com.zxy.ijplugin.wechat_miniprogram.lang.wxml.utils.WXMLUtils
 
 /**
  * [https://developers.weixin.qq.com/miniprogram/dev/reference/api/Component.html]
  */
-class WxmlCustomComponentDescriptor(private val element: JsonProperty) : WXMLBasicElementDescriptor() {
+class WxmlCustomComponentDescriptor(val element: JsonProperty) : WXMLBasicElementDescriptor() {
     override fun getDefaultValue(): String? {
         return null
     }
@@ -126,6 +128,12 @@ class WxmlCustomComponentDescriptor(private val element: JsonProperty) : WXMLBas
         ).find {
             it.name == attributeName
         } ?: AnyXmlAttributeDescriptor(attributeName)
+    }
+
+    fun resolveMarkupFile(): PsiFile? {
+        val registrationPath = this.element.value as? JsonStringLiteral ?: return null
+        val targetJsonFile = registrationPath.references.lastOrNull()?.resolve()?.containingFile ?: return null
+        return RelateFileHolder.MARKUP.findFile(targetJsonFile)
     }
 
 }

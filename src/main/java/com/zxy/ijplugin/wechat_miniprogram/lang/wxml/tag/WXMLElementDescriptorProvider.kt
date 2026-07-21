@@ -97,6 +97,10 @@ class WXMLElementDescriptorProvider : XmlElementDescriptorProvider {
         if (jsonProperty != null) {
             return WxmlCustomComponentDescriptor(jsonProperty)
         }
+        val genericProperty = findComponentGenericsJsonProperty(xmlTag)
+        if (genericProperty != null) {
+            return WxmlAbstractNodeDescriptor(genericProperty)
+        }
         return WXMLMetadata.getElementDescriptions(xmlTag.project).find {
             it.name == tagName
         }?.let {
@@ -121,6 +125,15 @@ class WXMLElementDescriptorProvider : XmlElementDescriptorProvider {
             }
         }
         return usingComponentItems.find {
+            it.name == tagName
+        }
+    }
+
+    private fun findComponentGenericsJsonProperty(xmlTag: XmlTag): JsonProperty? {
+        val tagName = xmlTag.name
+        val wxmlPsiFile = xmlTag.containingFile
+        val jsonFile = RelateFileHolder.JSON.findFile(wxmlPsiFile.originalFile) as? JsonFile ?: return null
+        return ComponentJsonUtils.getComponentGenericsItems(jsonFile)?.find {
             it.name == tagName
         }
     }

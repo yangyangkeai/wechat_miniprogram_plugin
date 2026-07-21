@@ -77,14 +77,18 @@ import com.intellij.patterns.PlatformPatterns
 import com.intellij.patterns.XmlPatterns
 import com.intellij.psi.*
 import com.intellij.psi.impl.source.resolve.reference.impl.providers.FileReferenceSet
+import com.intellij.openapi.util.TextRange
 import com.intellij.psi.util.elementType
 import com.intellij.psi.xml.XmlAttribute
 import com.intellij.psi.xml.XmlAttributeValue
+import com.intellij.psi.xml.XmlTag
 import com.intellij.psi.xml.XmlTokenType
 import com.intellij.util.ProcessingContext
 import com.zxy.ijplugin.wechat_miniprogram.lang.wxml.WXMLLanguage
 import com.zxy.ijplugin.wechat_miniprogram.lang.wxml.WXMLPsiFile
+import com.zxy.ijplugin.wechat_miniprogram.lang.wxml.tag.WxmlCustomComponentDescriptor
 import com.zxy.ijplugin.wechat_miniprogram.utils.ComponentWxmlUtils
+import com.zxy.ijplugin.wechat_miniprogram.lang.wxml.utils.nameTextRangeInSelf
 import com.zxy.ijplugin.wechat_miniprogram.utils.toTextRange
 
 class WXMLReferenceContributor : PsiReferenceContributor() {
@@ -247,6 +251,33 @@ class WXMLReferenceContributor : PsiReferenceContributor() {
                 }
         )
 
+        // 跳转自定义组件标签到组件标记文件(wxml/qml)
+        psiReferenceRegistrar.registerReferenceProvider(
+                XmlPatterns.xmlTag().withLanguage(WXMLLanguage.INSTANCE),
+                object : PsiReferenceProvider() {
+                    override fun getReferencesByElement(
+                            element: PsiElement, context: ProcessingContext
+                    ): Array<PsiReference> {
+                        val xmlTag = element as? XmlTag ?: return PsiReference.EMPTY_ARRAY
+                        val descriptor = xmlTag.descriptor as? WxmlCustomComponentDescriptor
+                                ?: return PsiReference.EMPTY_ARRAY
+                        val markupFile = descriptor.resolveMarkupFile() ?: return PsiReference.EMPTY_ARRAY
+                        val textRange = xmlTag.nameTextRangeInSelf() ?: return PsiReference.EMPTY_ARRAY
+                        return arrayOf(CustomComponentTagReference(xmlTag, textRange, markupFile))
+                    }
+                }
+        )
+
     }
 
+}
+
+private class CustomComponentTagReference(
+        xmlTag: XmlTag,
+        textRange: TextRange,
+        private val target: PsiElement
+) : PsiReferenceBase<XmlTag>(xmlTag, textRange, false) {
+    override fun resolve(): PsiElement {
+        return target
+    }
 }

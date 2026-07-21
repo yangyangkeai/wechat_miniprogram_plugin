@@ -87,10 +87,21 @@ object ComponentJsonUtils {
         return usingComponentsObjectValue?.propertyList
     }
 
+    fun getComponentGenericsItems(jsonPsiFile: JsonFile): MutableList<JsonProperty>? {
+        val componentGenericsObjectValue = getComponentGenericsPropertyValue(jsonPsiFile)
+        return componentGenericsObjectValue?.propertyList
+    }
+
     fun getUsingComponentPropertyValue(jsonPsiFile: JsonFile): JsonObject? {
         val root = jsonPsiFile.topLevelValue as? JsonObject ?: return null
         val usingComponentsProperty = root.findProperty("usingComponents") ?: return null
         return usingComponentsProperty.value as? JsonObject ?: return null
+    }
+
+    fun getComponentGenericsPropertyValue(jsonPsiFile: JsonFile): JsonObject? {
+        val root = jsonPsiFile.topLevelValue as? JsonObject ?: return null
+        val componentGenericsProperty = root.findProperty("componentGenerics") ?: return null
+        return componentGenericsProperty.value as? JsonObject ?: return null
     }
 
     /**

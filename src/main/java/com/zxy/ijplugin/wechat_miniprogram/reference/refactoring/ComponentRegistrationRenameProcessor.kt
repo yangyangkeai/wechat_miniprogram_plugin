@@ -83,6 +83,7 @@ import com.intellij.psi.xml.XmlTag
 import com.intellij.refactoring.rename.RenamePsiElementProcessor
 import com.zxy.ijplugin.wechat_miniprogram.context.RelateFileHolder
 import com.zxy.ijplugin.wechat_miniprogram.lang.wxml.WXMLPsiFile
+import com.zxy.ijplugin.wechat_miniprogram.lang.wxml.tag.WxmlCustomComponentDescriptor
 import com.zxy.ijplugin.wechat_miniprogram.reference.JsonRegistrationReference
 import com.zxy.ijplugin.wechat_miniprogram.utils.findChildrenOfType
 
@@ -100,12 +101,11 @@ class ComponentRegistrationRenameProcessor : RenamePsiElementProcessor() {
         val wxmlPsiFile = RelateFileHolder.MARKUP.findFile(containingFile) as? WXMLPsiFile ?: return mutableListOf()
         return wxmlPsiFile.findChildrenOfType<XmlTag>().filter {
             it.name == element.name
+        }.filter {
+            (it.descriptor as? WxmlCustomComponentDescriptor)?.element == element
         }.flatMap {
             it.references.toList()
-        }.filterIsInstance<TagNameReference>()
-                .filter {
-                    it.resolve() == element
-                }.toMutableList()
+        }.filterIsInstance<TagNameReference>().toMutableList()
     }
 
     override fun canProcessElement(element: PsiElement): Boolean {

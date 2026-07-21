@@ -113,6 +113,7 @@ class WXMLTagNameProvider : XmlTagNameProvider {
                     val usingComponentsObjectValue = ComponentJsonUtils.getUsingComponentPropertyValue(
                             currentJsonPsiFile
                     )
+                    val componentGenericsItems = ComponentJsonUtils.getComponentGenericsItems(currentJsonPsiFile)
                     val appJsonUsingComponentsObjectValue = AppJsonUtils.findUsingComponentsValue(tag.project)
                     // 从app.json 和 相关的json文件中手机usingComponents
                     val usingComponentItems = mutableListOf<JsonProperty>().apply {
@@ -155,6 +156,9 @@ class WXMLTagNameProvider : XmlTagNameProvider {
                             LookupElementBuilder.create(configComponentName)
                                     .withTypeText(componentPath)
                         }
+                    })
+                    elements.addAll(componentGenericsItems.orEmpty().map {
+                        LookupElementBuilder.create(it.name).withTypeText("componentGenerics")
                     })
                 }
             }
