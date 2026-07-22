@@ -2,10 +2,9 @@
 
 # IntelliJ Platform Plugin Template Changelog
 
-## [3.5.31] - developing
+## [3.5.31] - 2026-07-23
 ### Changed
-- Support for the `'...'` object spread syntax in WXML
-- Added more navigation path support in `app.json`, including `entryPagePath`, `subpackages`, and `tabBar`
+- Optimizations and bug fixes
 
 ## [3.5.30] - 2026-07-17
 
