@@ -2,6 +2,10 @@
 
 # IntelliJ Platform Plugin Template Changelog
 
+## [3.5.32] - 2026-11-11
+### Changed
+- Support 2026.3
+
 ## [3.5.31] - 2026-07-23
 ### Changed
 - Optimizations and bug fixes

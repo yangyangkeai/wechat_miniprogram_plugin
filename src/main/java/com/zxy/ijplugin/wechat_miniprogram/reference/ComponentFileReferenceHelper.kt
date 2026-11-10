@@ -91,6 +91,6 @@ class ComponentFileReferenceHelper : PsiFileReferenceHelper() {
     override fun getRoots(module: Module, hostFile: VirtualFile): MutableCollection<PsiFileSystemItem> {
         return findMiniProgramRootDir(module.project)?.let {
             mutableListOf(it as PsiFileSystemItem)
-        } ?: super.getRoots(module, hostFile)
+        } ?: super.getRoots(module, hostFile).toMutableList()
     }
 }

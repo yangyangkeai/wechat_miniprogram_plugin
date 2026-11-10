@@ -111,10 +111,10 @@ class WXMLIdReference(xmlAttributeValue: XmlAttributeValue, range: TextRange) :
         }
     }
 
-    private fun getIdSelectorsFromRelatedWxssFile(): MutableCollection<CssIdSelector> {
+    private fun getIdSelectorsFromRelatedWxssFile(): Collection<CssIdSelector> {
         val wxmlFile = this.element.containingFile.originalFile
         // 在wxml文件附近找同名的wxss文件
-        val wxssPsiFile = RelateFileHolder.STYLE.findFile(wxmlFile) ?: return mutableListOf()
+        val wxssPsiFile = RelateFileHolder.STYLE.findFile(wxmlFile) ?: return emptyList()
         return PsiTreeUtil.findChildrenOfType(wxssPsiFile, CssIdSelector::class.java)
     }
 

@@ -178,7 +178,7 @@ class WXMLClassReference(psiElement: PsiElement, textRange: TextRange) :
         }.distinct()
     }
 
-    private fun findClassSelectorFromFile(wxssPsiFile: WXSSPsiFile): MutableCollection<CssClass> {
+    private fun findClassSelectorFromFile(wxssPsiFile: WXSSPsiFile): Collection<CssClass> {
         return PsiTreeUtil.findChildrenOfType(wxssPsiFile, CssClass::class.java)
     }
 
